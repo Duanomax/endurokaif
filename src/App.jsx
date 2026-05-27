@@ -32,6 +32,17 @@ const brand = {
   max: "https://max.ru/endurokaif",
 };
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
+function GlobalStyles() {
+  return (
+    <style>{`
+      html, body, #root { background: #000; min-height: 100%; }
+      body { margin: 0; overflow-x: hidden; }
+    `}</style>
+  );
+}
+
 const contacts = [
   { title: "Telegram", text: "Основная запись", href: brand.telegram, primary: true, icon: MessageCircle },
   { title: "WhatsApp", text: "Быстрый вопрос", href: brand.whatsapp, primary: false, icon: MessageCircle },
@@ -48,7 +59,7 @@ const fleet = [
     fit: "рост 155–175 см · вес 50–90 кг",
     from: "от 4 500 ₽/час",
     accent: "from-orange-500/40 via-fuchsia-500/20 to-cyan-300/20",
-    image: "/images/pitbike-125-cutout.png",
+    image: asset("/images/pitbike-125-cutout.png"),
   },
   {
     title: "BSE Z5 250",
@@ -58,7 +69,7 @@ const fleet = [
     fit: "колёса 21/18 · электростартер",
     from: "от 5 500 ₽/час",
     accent: "from-yellow-300/35 via-fuchsia-500/20 to-cyan-300/20",
-    image: "/images/bse-z5-cutout.png",
+    image: asset("/images/bse-z5-cutout.png"),
   },
   {
     title: "XGZ 300",
@@ -68,7 +79,7 @@ const fleet = [
     fit: "колёса 21/18 · электростартер",
     from: "от 5 500 ₽/час",
     accent: "from-cyan-300/35 via-fuchsia-500/20 to-white/10",
-    image: "/images/xgz-300-cutout.png",
+    image: asset("/images/xgz-300-cutout.png"),
   },
   {
     title: "STN R6 / V6 / G9 PRO",
@@ -78,7 +89,7 @@ const fleet = [
     fit: "полноразмерники · есть водянка G9 PRO",
     from: "от 6 000 ₽/час",
     accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
-    image: "/images/stn-r6-cutout.png",
+    image: asset("/images/stn-r6-cutout.png"),
   },
   {
     title: "Квадроциклы 200 / 650–750",
@@ -88,7 +99,7 @@ const fleet = [
     fit: "для одного, пары или компактной компании",
     from: "от 6 000 ₽/час",
     accent: "from-lime-400/35 via-cyan-300/20 to-fuchsia-500/20",
-    image: "/images/quad-200-cutout.png",
+    image: asset("/images/quad-200-cutout.png"),
   },
   {
     title: "Сноубайки",
@@ -98,7 +109,7 @@ const fleet = [
     fit: "условия и цена зависят от сезона",
     from: "по запросу",
     accent: "from-white/25 via-cyan-300/25 to-fuchsia-500/15",
-    image: "/images/snowbike-cutout.png",
+    image: asset("/images/snowbike-cutout.png"),
   },
 ];
 
@@ -233,8 +244,8 @@ function NoiseLayer() {
 function HeroVideoBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-black">
-      <video className="absolute inset-0 h-full w-full object-cover opacity-75" autoPlay muted loop playsInline poster="/hero-poster.jpg">
-        <source src="/hero-bg.mp4" type="video/mp4" />
+      <video className="absolute inset-0 h-full w-full object-cover opacity-75" autoPlay muted loop playsInline poster={asset("/hero-poster.jpg")}>
+        <source src={asset("/hero-bg.mp4")} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/62" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(236,72,153,.34),transparent_30%),radial-gradient(circle_at_82%_22%,rgba(34,211,238,.28),transparent_28%),linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.36),rgba(0,0,0,.88))]" />
@@ -331,7 +342,7 @@ function ContactCards({ compact = false }) {
           >
             <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
             <div className="relative mb-5 flex items-center justify-between">
-              <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${contact.primary ? "bg-black text-cyan-300" : "bg-white/10 text-cyan-300"}`}>
+              <div className={`flex h-10 w-10 items-center justify-center rounded-2xl ${contact.primary ? "bg-black text-cyan-300" : "bg-white/10 text-cyan-300"}`}>
                 <Icon className="h-5 w-5" />
               </div>
               <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -393,12 +404,12 @@ function LocationMap() {
 
 function RealRideGallery() {
   const photos = [
-    { src: "/images/ride-real-1.jpg", title: "Техника в лесу" },
-    { src: "/images/ride-real-2.jpg", title: "Питбайк и характер" },
-    { src: "/images/ride-real-3.jpg", title: "Компания на маршруте" },
-    { src: "/images/ride-real-4.jpg", title: "Квадро + эндуро" },
-    { src: "/images/ride-real-5.jpg", title: "Квадро-тур крупным планом" },
-    { src: "/images/ride-real-6.jpg", title: "Зимний кайф" },
+    { src: asset("/images/ride-real-1.jpg"), title: "Техника в лесу" },
+    { src: asset("/images/ride-real-2.jpg"), title: "Питбайк и характер" },
+    { src: asset("/images/ride-real-3.jpg"), title: "Компания на маршруте" },
+    { src: asset("/images/ride-real-4.jpg"), title: "Квадро + эндуро" },
+    { src: asset("/images/ride-real-5.jpg"), title: "Квадро-тур крупным планом" },
+    { src: asset("/images/ride-real-6.jpg"), title: "Зимний кайф" },
   ];
 
   return (
@@ -431,6 +442,46 @@ function RealRideGallery() {
   );
 }
 
+function TechPreview({ selected, compact = false }) {
+  return (
+    <>
+      <div className={`relative overflow-hidden bg-gradient-to-br ${selected.accent} p-4 ${compact ? "min-h-[330px]" : "min-h-[460px] p-6"}`}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.16),transparent_32%),linear-gradient(135deg,rgba(0,0,0,.18),rgba(0,0,0,.92))]" />
+        <div className="absolute inset-0 opacity-[0.15] [background-image:linear-gradient(rgba(255,255,255,.25)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.25)_1px,transparent_1px)] [background-size:46px_46px]" />
+        <motion.img
+          src={selected.image}
+          alt={selected.title}
+          className={`relative z-10 mx-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,.75)] ${compact ? "h-[210px]" : "h-[350px]"}`}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="relative z-10 mt-2">
+          <div className="text-[10px] font-black uppercase tracking-[0.24em] text-fuchsia-200 md:text-xs">{selected.category}</div>
+          <div className={`${compact ? "text-2xl" : "text-4xl"} mt-2 font-black tracking-tight`}>{selected.title}</div>
+          <div className="mt-2 max-w-xl text-sm text-zinc-300 md:text-base">{selected.subtitle}</div>
+        </div>
+      </div>
+      <div className="grid gap-3 p-4 md:grid-cols-3 md:p-5">
+        <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
+          <Gauge className="mb-3 h-5 w-5 text-cyan-300" />
+          <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">характеристики</div>
+          <div className="mt-1 text-sm font-bold md:text-base">{selected.specs}</div>
+        </div>
+        <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
+          <Star className="mb-3 h-5 w-5 text-fuchsia-400" />
+          <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">кому подходит</div>
+          <div className="mt-1 text-sm font-bold md:text-base">{selected.fit}</div>
+        </div>
+        <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
+          <Zap className="mb-3 h-5 w-5 text-yellow-200" />
+          <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">стоимость</div>
+          <div className="mt-1 text-sm font-bold md:text-base">{selected.from}</div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function MobileStickyCta() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-black/82 p-3 backdrop-blur-xl md:hidden">
@@ -456,6 +507,7 @@ export default function EndurokaifLanding() {
 
   return (
     <main className="min-h-screen bg-black pb-20 text-white antialiased selection:bg-fuchsia-500 selection:text-white md:pb-0">
+      <GlobalStyles />
       <section className="relative min-h-screen overflow-hidden">
         <HeroVideoBackground />
 
@@ -480,18 +532,18 @@ export default function EndurokaifLanding() {
           </nav>
         </header>
 
-        <div id="top" className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-7xl items-center px-5 pb-28 pt-14 md:px-8 md:pt-16">
+        <div id="top" className="relative z-10 mx-auto flex min-h-[calc(100svh-86px)] max-w-7xl items-center px-5 pb-24 pt-8 md:min-h-[calc(100vh-96px)] md:px-8 md:pb-28 md:pt-16">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-5xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-fuchsia-400/35 bg-fuchsia-500/15 px-4 py-2 text-sm font-black uppercase tracking-wide text-fuchsia-100 shadow-[0_0_34px_rgba(236,72,153,.18)]">
               <Zap className="h-4 w-4" />
               {brand.city} · {brand.shortPlace} · {brand.since}
             </div>
 
-            <h1 className="text-5xl font-black uppercase leading-[0.88] tracking-[-0.08em] text-white md:text-8xl lg:text-9xl">
+            <h1 className="text-4xl font-black uppercase leading-[0.9] tracking-[-0.055em] text-white sm:text-5xl md:text-8xl lg:text-9xl">
               Грязь. Газ. <span className="text-fuchsia-500 drop-shadow-[0_0_18px_rgba(236,72,153,.55)]">Кайф.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-zinc-200 md:text-xl">
+            <p className="mt-6 max-w-2xl text-base font-medium leading-7 tracking-normal text-zinc-200 md:text-xl md:leading-8">
               {brand.name} — эндуро, питбайки и квадроциклы в СПб. Техника, экипировка, инструктаж, гиды, тренер и маршруты, после которых хочется вернуться.
             </p>
 
@@ -547,7 +599,7 @@ export default function EndurokaifLanding() {
         </div>
       </section>
 
-      <section id="fleet" className="relative overflow-hidden bg-[#050505] px-5 py-20 md:px-8 md:py-28">
+      <section id="fleet" className="relative overflow-hidden bg-[#050505] px-5 py-16 md:px-8 md:py-28">
         <div className="absolute left-0 top-0 h-28 w-full bg-fuchsia-600/15 [clip-path:polygon(0_0,100%_0,100%_20%,0_80%)]" />
         <div className="relative mx-auto max-w-7xl">
           <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Питбайки для старта, эндуро для опытных, квадроциклы для туров и компаний, сноубайки для зимнего формата." />
@@ -555,53 +607,34 @@ export default function EndurokaifLanding() {
           <div className="grid gap-5 lg:grid-cols-[.85fr_1.15fr]">
             <div className="grid gap-3">
               {fleet.map((item) => (
-                <button key={item.title} onClick={() => setSelected(item)} className={`group rounded-3xl border p-5 text-left transition-all ${selected.title === item.title ? "border-fuchsia-400 bg-fuchsia-600 text-white shadow-[0_0_40px_rgba(217,70,239,.26)]" : "border-white/10 bg-white/[0.04] text-white hover:border-cyan-300/45 hover:bg-cyan-300/[0.08]"}`}>
-                  <div className="flex items-center justify-between gap-5">
-                    <div>
-                      <div className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">{item.category}</div>
-                      <div className="mt-1 text-2xl font-black">{item.title}</div>
-                      <div className={`mt-1 text-sm ${selected.title === item.title ? "text-white/75" : "text-zinc-400"}`}>{item.subtitle}</div>
+                <div key={item.title}>
+                  <button onClick={() => setSelected(item)} className={`group w-full rounded-3xl border p-4 text-left transition-all md:p-5 ${selected.title === item.title ? "border-fuchsia-400 bg-fuchsia-600 text-white shadow-[0_0_40px_rgba(217,70,239,.26)]" : "border-white/10 bg-white/[0.04] text-white hover:border-cyan-300/45 hover:bg-cyan-300/[0.08]"}`}>
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-200 md:text-xs">{item.category}</div>
+                        <div className="mt-1 text-xl font-black md:text-2xl">{item.title}</div>
+                        <div className={`mt-1 text-sm ${selected.title === item.title ? "text-white/75" : "text-zinc-400"}`}>{item.subtitle}</div>
+                      </div>
+                      <ChevronRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
                     </div>
-                    <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </button>
+                  </button>
+
+                  {selected.title === item.title && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="mt-3 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] lg:hidden"
+                    >
+                      <TechPreview selected={selected} compact />
+                    </motion.div>
+                  )}
+                </div>
               ))}
             </div>
 
-            <motion.div key={selected.title} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04]">
-              <div className={`relative min-h-[360px] overflow-hidden bg-gradient-to-br ${selected.accent} p-6 md:min-h-[460px]`}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.16),transparent_32%),linear-gradient(135deg,rgba(0,0,0,.25),rgba(0,0,0,.92))]" />
-                <div className="absolute inset-0 opacity-[0.15] [background-image:linear-gradient(rgba(255,255,255,.25)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.25)_1px,transparent_1px)] [background-size:46px_46px]" />
-                <motion.img
-                  src={selected.image}
-                  alt={selected.title}
-                  className="relative z-10 mx-auto h-[250px] w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,.75)] md:h-[350px]"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <div className="relative z-10 mt-2">
-                  <div className="text-xs font-black uppercase tracking-[0.24em] text-fuchsia-200">{selected.category}</div>
-                  <div className="mt-2 text-4xl font-black tracking-tight">{selected.title}</div>
-                  <div className="mt-2 max-w-xl text-zinc-300">{selected.subtitle}</div>
-                </div>
-              </div>
-              <div className="grid gap-3 p-5 md:grid-cols-3">
-                <div className="rounded-3xl border border-white/10 bg-black/35 p-5">
-                  <Gauge className="mb-3 h-5 w-5 text-cyan-300" />
-                  <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">характеристики</div>
-                  <div className="mt-1 font-bold">{selected.specs}</div>
-                </div>
-                <div className="rounded-3xl border border-white/10 bg-black/35 p-5">
-                  <Star className="mb-3 h-5 w-5 text-fuchsia-400" />
-                  <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">кому подходит</div>
-                  <div className="mt-1 font-bold">{selected.fit}</div>
-                </div>
-                <div className="rounded-3xl border border-white/10 bg-black/35 p-5">
-                  <Zap className="mb-3 h-5 w-5 text-yellow-200" />
-                  <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">стоимость</div>
-                  <div className="mt-1 font-bold">{selected.from}</div>
-                </div>
-              </div>
+            <motion.div key={selected.title} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="hidden overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] lg:block">
+              <TechPreview selected={selected} />
             </motion.div>
           </div>
         </div>
