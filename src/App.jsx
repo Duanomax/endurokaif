@@ -1,4 +1,4 @@
-// VERSION: EQUIPMENT_LEFT_PLUS15_RIGHT_20260616
+// VERSION: EQUIPMENT_MOBILE_IMAGES_SMALLER_20260616
 import React, { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -1125,16 +1125,16 @@ export default function EndurokaifLanding() {
               <div className="relative mt-4 flex flex-1 flex-col overflow-hidden rounded-[1.8rem] border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.03] to-transparent px-2 pt-2">
                 <div className="relative flex min-h-[430px] flex-1 items-center justify-center sm:min-h-[500px] md:min-h-[560px]">
                   <div className="flex h-full w-full items-end justify-center">
-                    <div className="inline-flex items-end justify-center -space-x-16 sm:-space-x-20 md:-space-x-24">
+                    <div className="inline-flex items-end justify-center -space-x-8 sm:-space-x-12 md:-space-x-24">
                       <img
                         src={asset("/images/equipment-rider-front.png")}
                         alt="Экипировка райдера спереди"
-                        className="pointer-events-none h-[100%] max-h-[760px] w-auto translate-x-[4.25rem] object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:translate-x-[5rem] md:translate-x-[5.75rem]"
+                        className="pointer-events-none h-[74%] max-h-[390px] w-auto translate-x-8 object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:h-[82%] sm:max-h-[460px] sm:translate-x-12 md:h-[100%] md:max-h-[760px] md:translate-x-[5.75rem]"
                       />
                       <img
                         src={asset("/images/equipment-rider-back.png")}
                         alt="Экипировка райдера сзади"
-                        className="pointer-events-none h-[100%] max-h-[760px] w-auto -translate-x-4 object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:-translate-x-6 md:-translate-x-8"
+                        className="pointer-events-none h-[74%] max-h-[390px] w-auto -translate-x-2 object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:h-[82%] sm:max-h-[460px] sm:-translate-x-4 md:h-[100%] md:max-h-[760px] md:-translate-x-8"
                       />
                     </div>
                   </div>
