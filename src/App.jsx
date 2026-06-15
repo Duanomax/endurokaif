@@ -57,7 +57,9 @@ const fleet = [
     category: "Enduro",
     subtitle: "Полноразмерный эндуро для базового входа и уверенного роста",
     specs: "250 см³ · 21 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Объём двигателя: 250 см³", "Мощность: 21 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–195 см · вес 60–105 кг · новичок с базой / средний уровень",
+    fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с базовой подготовкой / средний уровень"],
     from: "от 5 500 ₽/час",
     accent: "from-yellow-300/35 via-fuchsia-500/20 to-cyan-300/20",
     image: asset("/images/bse-z5.png"),
@@ -68,7 +70,9 @@ const fleet = [
     category: "Enduro",
     subtitle: "Спокойный полноразмерный эндуро для новичка и ровных маршрутов",
     specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Объём двигателя: 300 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–190 см · вес 60–105 кг · новичок / спокойные маршруты",
+    fitList: ["Рост: 170–190 см", "Вес: 60–105 кг", "Уровень: новичок / спокойные эндуро-маршруты"],
     from: "от 6 000 ₽/час",
     accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
     image: asset("/images/stn-r6.png"),
@@ -79,7 +83,9 @@ const fleet = [
     category: "Enduro",
     subtitle: "Полноразмерный эндуро для новичка с небольшим опытом",
     specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Объём двигателя: 300 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–195 см · вес 60–105 кг · небольшой опыт / средний уровень",
+    fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с небольшим опытом / средний уровень"],
     from: "от 6 500 ₽/час",
     accent: "from-fuchsia-500/30 via-orange-500/20 to-cyan-300/20",
     image: asset("/images/stn-v6.png"),
@@ -90,7 +96,9 @@ const fleet = [
     category: "Pitbike",
     subtitle: "Лёгкий питбайк для первого опыта, обучения и лёгких маршрутов",
     specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
+    specsList: ["Объём двигателя: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
     fit: "рост 150–175 см · вес 40–85 кг · первый опыт / обучение",
+    fitList: ["Рост: 150–175 см", "Вес: 40–85 кг", "Уровень: первый опыт / обучение / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
     accent: "from-orange-500/40 via-fuchsia-500/20 to-cyan-300/20",
     image: asset("/images/apex-rmg.png"),
@@ -101,7 +109,9 @@ const fleet = [
     category: "Pitbike",
     subtitle: "Компактный питбайк для новичков, подростков и лёгких маршрутов",
     specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
+    specsList: ["Объём двигателя: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
     fit: "рост 145–175 см · вес 40–85 кг · новичок / подросток",
+    fitList: ["Рост: 145–175 см", "Вес: 40–85 кг", "Уровень: новичок / подросток / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
     accent: "from-cyan-300/35 via-fuchsia-500/20 to-white/10",
     image: asset("/images/wels-team-125.png"),
@@ -112,7 +122,9 @@ const fleet = [
     category: "Enduro",
     subtitle: "Эндуро для уверенного новичка и среднего уровня",
     specs: "271 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Объём двигателя: 271 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 175–195 см · вес 65–105 кг · уверенный новичок / средний уровень",
+    fitList: ["Рост: 175–195 см", "Вес: 65–105 кг", "Уровень: уверенный новичок / средний уровень"],
     from: "от 5 500 ₽/час",
     accent: "from-cyan-300/35 via-fuchsia-500/20 to-yellow-200/10",
     image: asset("/images/xgz-gts-pr300.png"),
@@ -123,7 +135,9 @@ const fleet = [
     category: "Enduro Pro",
     subtitle: "Мощный полноразмерный эндуро для активного катания",
     specs: "300 см³ · 33 л.с. · колёса 21/18 · мощный полноразмерный эндуро",
+    specsList: ["Объём двигателя: 300 см³", "Мощность: 33 л.с.", "Колёса: 21/18", "Класс: мощный полноразмерный эндуро"],
     fit: "рост 175–200 см · вес 70–110 кг · средний / опытный уровень",
+    fitList: ["Рост: 175–200 см", "Вес: 70–110 кг", "Уровень: средний уровень / опытный райдер / активное эндуро"],
     from: "от 8 500 ₽/час",
     accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
     image: asset("/images/stn-g9-pro.png"),
@@ -133,8 +147,10 @@ const fleet = [
     type: "quad",
     category: "Квадроцикл",
     subtitle: "Полноприводный туристический квадроцикл для тура с инструктором",
-    specs: "735 см³ · 53 л.с. · колёса 14″ · туристический 4×4 квадроцикл",
+    specs: "735 см³ · 53 л.с. · колёса 14″ · туристический 4x4 квадроцикл",
+    specsList: ["Объём двигателя: 735 см³", "Мощность: 53 л.с.", "Колёса: 14″", "Класс: туристический полноприводный квадроцикл"],
     fit: "рост 165–200 см · нагрузка до 234 кг · 1–2 человека",
+    fitList: ["Рост: 165–200 см", "Вес: до 234 кг общей нагрузки", "Уровень: новичок с инструктором / уверенный райдер", "Посадка: 1–2 человека"],
     from: "от 8 000 ₽/час",
     accent: "from-lime-400/35 via-cyan-300/20 to-fuchsia-500/20",
     image: asset("/images/hisun-750.png"),
@@ -144,8 +160,10 @@ const fleet = [
     type: "quad",
     category: "Квадроцикл",
     subtitle: "Лёгкий утилитарный квадроцикл для новичка и спокойного маршрута",
-    specs: "200 см³ · 16 л.с. · резиновые колёса · лёгкий утилитарный квадроцикл",
-    fit: "рост 145–185 см · вес до 90–100 кг · 1 человек / взрослый + ребёнок",
+    specs: "200 см³ · 16 л.с. · лёгкий утилитарный квадроцикл",
+    specsList: ["Объём двигателя: 200 см³", "Мощность: 16 л.с.", "Колёса: резиновые", "Класс: лёгкий утилитарный квадроцикл"],
+    fit: "рост 145–185 см · вес до 90–100 кг · 1 человек / 1 взрослый + ребёнок",
+    fitList: ["Рост: 145–185 см", "Вес: до 90–100 кг", "Уровень: новичок / подросток / спокойные маршруты", "Посадка: 1 человек / 1 взрослый + ребёнок по согласованию"],
     from: "от 6 000 ₽/час",
     accent: "from-lime-300/35 via-fuchsia-500/20 to-cyan-300/20",
     image: asset("/images/avantis-200.png"),
@@ -154,22 +172,17 @@ const fleet = [
     title: "IRBIS 180",
     type: "snowbike",
     category: "Сноубайк",
-    subtitle: "Лёгкий сноубайк для спокойных зимних маршрутов",
+    subtitle: "Лёгкий сноубайк для зимних спокойных маршрутов",
     specs: "180 см³ · 12 л.с. · гусеница 2626 × 380 мм · лёгкий сноубайк",
+    specsList: ["Объём двигателя: 180 см³", "Мощность: 12 л.с.", "Гусеница: 2626 × 380 мм", "Класс: лёгкий сноубайк / зимняя внедорожная техника"],
     fit: "рост 160–195 см · вес до 150 кг · новичок / зимние маршруты",
+    fitList: ["Рост: 160–195 см", "Вес: до 150 кг", "Уровень: новичок / спокойные зимние маршруты", "Посадка: 1 человек"],
     from: "по запросу",
     accent: "from-white/25 via-cyan-300/25 to-fuchsia-500/15",
     image: asset("/images/irbis-180.png"),
   },
 ];
 
-const fleetFilters = [
-  { key: "all", label: "Все" },
-  { key: "enduro", label: "Enduro" },
-  { key: "pitbike", label: "Pitbike" },
-  { key: "quad", label: "Квадроцикл" },
-  { key: "snowbike", label: "Сноубайк" },
-];
 
 const packages = {
   training: {
@@ -225,16 +238,6 @@ const packages = {
       },
     ],
   },
-  snow: {
-    title: "Сноубайк",
-    short: "Зима",
-    label: "зимний формат",
-    hook: "Хочешь зимний внедорожный кайф?",
-    note: "Сезонный формат на лёгком сноубайке IRBIS 180. Цена и доступность зависят от сезона и состояния маршрутов.",
-    items: [
-      { name: "IRBIS 180", price: "по запросу", details: "180 см³, 12 л.с., гусеница 2626 × 380 мм. Рост 160–195 см, вес до 150 кг. Посадка: 1 человек." },
-    ],
-  },
   free: {
     title: "Свободное катание",
     short: "Самостоятельно",
@@ -252,13 +255,12 @@ const packages = {
   },
 };
 
-const packageOrder = ["training", "guided", "quad", "snow", "free"];
+const packageOrder = ["training", "guided", "quad", "free"];
 
 const picker = [
   { title: "Я новичок", text: "Хочу попробовать без риска", result: "Занятие с тренером", key: "training" },
   { title: "Я уже ездил", text: "Хочу маршрут, грязь и темп", result: "Мото-тур с гидом", key: "guided" },
   { title: "Едем компанией", text: "Друзья, пара, ребёнок, корпоратив", result: "Квадро-тур", key: "quad" },
-  { title: "Хочу зимой", text: "Снег, гусеница и новый опыт", result: "Сноубайк", key: "snow" },
   { title: "Хочу сам", text: "Есть опыт и нужен свободный формат", result: "Свободное катание", key: "free" },
 ];
 
@@ -514,20 +516,36 @@ function RealRideGallery() {
   );
 }
 
+function InfoLines({ items }) {
+  return (
+    <ul className="mt-3 space-y-2 text-sm font-bold leading-5 text-zinc-100 md:text-base md:leading-6">
+      {items.map((item) => (
+        <li key={item} className="flex gap-2">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,.75)]" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function TechPreview({ selected, compact = false }) {
+  const specs = selected.specsList || selected.specs.split(" · ");
+  const fit = selected.fitList || selected.fit.split(" · ");
+
   return (
     <>
-      <div className={`relative overflow-hidden bg-gradient-to-br ${selected.accent} p-4 ${compact ? "min-h-[330px]" : "min-h-[460px] p-6"}`}>
+      <div className={`relative overflow-hidden bg-gradient-to-br ${selected.accent} ${compact ? "min-h-[360px] p-4 md:min-h-[540px] md:p-6" : "min-h-[540px] p-6"}`}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.16),transparent_32%),linear-gradient(135deg,rgba(0,0,0,.18),rgba(0,0,0,.92))]" />
         <div className="absolute inset-0 opacity-[0.15] [background-image:linear-gradient(rgba(255,255,255,.25)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.25)_1px,transparent_1px)] [background-size:46px_46px]" />
         <motion.img
           src={selected.image}
           alt={selected.title}
-          className={`relative z-10 mx-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,.75)] ${compact ? "h-[210px]" : "h-[350px]"}`}
-          animate={{ y: [0, -8, 0] }}
+          className={`relative z-10 mx-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,.75)] ${compact ? "h-[285px] scale-[1.22] md:h-[430px] md:scale-[1.16]" : "h-[430px] scale-[1.16]"}`}
+          animate={{ y: [0, -10, 0] }}
           transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="relative z-10 mt-2">
+        <div className="relative z-10 mt-3">
           <div className="text-[10px] font-black uppercase tracking-[0.24em] text-fuchsia-200 md:text-xs">{selected.category}</div>
           <div className={`${compact ? "text-2xl" : "text-4xl"} mt-2 font-black tracking-tight`}>{selected.title}</div>
           <div className="mt-2 max-w-xl text-sm text-zinc-300 md:text-base">{selected.subtitle}</div>
@@ -537,17 +555,17 @@ function TechPreview({ selected, compact = false }) {
         <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
           <Gauge className="mb-3 h-5 w-5 text-cyan-300" />
           <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">характеристики</div>
-          <div className="mt-1 text-sm font-bold md:text-base">{selected.specs}</div>
+          <InfoLines items={specs} />
         </div>
         <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
           <Star className="mb-3 h-5 w-5 text-fuchsia-400" />
           <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">кому подходит</div>
-          <div className="mt-1 text-sm font-bold md:text-base">{selected.fit}</div>
+          <InfoLines items={fit} />
         </div>
         <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
           <Zap className="mb-3 h-5 w-5 text-yellow-200" />
           <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">стоимость</div>
-          <div className="mt-1 text-sm font-bold md:text-base">{selected.from}</div>
+          <div className="mt-3 text-sm font-bold leading-5 text-zinc-100 md:text-base md:leading-6">{selected.from}</div>
         </div>
       </div>
     </>
