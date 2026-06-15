@@ -52,65 +52,123 @@ const contacts = [
 
 const fleet = [
   {
-    title: "Питбайк 125",
-    category: "Pitbike",
-    subtitle: "Лёгкий старт для новичков и базовой тренировки",
-    specs: "125 кубов · 12 лс · колёса 17/14",
-    fit: "рост 155–175 см · вес 50–90 кг",
-    from: "от 4 500 ₽/час",
-    accent: "from-orange-500/40 via-fuchsia-500/20 to-cyan-300/20",
-    image: asset("/images/pitbike-125-cutout.png"),
-  },
-  {
-    title: "BSE Z5 250",
+    title: "BSE Z5",
+    type: "enduro",
     category: "Enduro",
-    subtitle: "Полноразмерный эндуро для опытных райдеров",
-    specs: "250 кубов · 21 лс · 172 мотор · МКПП",
-    fit: "колёса 21/18 · электростартер",
+    subtitle: "Полноразмерный эндуро для базового входа и уверенного роста",
+    specs: "250 см³ · 21 л.с. · колёса 21/18 · полноразмерный эндуро",
+    fit: "рост 170–195 см · вес 60–105 кг · новичок с базой / средний уровень",
     from: "от 5 500 ₽/час",
     accent: "from-yellow-300/35 via-fuchsia-500/20 to-cyan-300/20",
-    image: asset("/images/bse-z5-cutout.png"),
+    image: asset("/images/bse-z5.png"),
   },
   {
-    title: "XGZ 300",
+    title: "STN R6",
+    type: "enduro",
     category: "Enduro",
-    subtitle: "Среднеразмерный эндуро с баланс-валом",
-    specs: "300 кубов · 25 лс · 175 мотор · МКПП",
-    fit: "колёса 21/18 · электростартер",
-    from: "от 5 500 ₽/час",
-    accent: "from-cyan-300/35 via-fuchsia-500/20 to-white/10",
-    image: asset("/images/xgz-300-cutout.png"),
-  },
-  {
-    title: "STN R6 / V6 / G9 PRO",
-    category: "Enduro Pro",
-    subtitle: "Мощная техника для уверенного наката",
-    specs: "300 кубов · 25–33 лс · МКПП",
-    fit: "полноразмерники · есть водянка G9 PRO",
+    subtitle: "Спокойный полноразмерный эндуро для новичка и ровных маршрутов",
+    specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    fit: "рост 170–190 см · вес 60–105 кг · новичок / спокойные маршруты",
     from: "от 6 000 ₽/час",
     accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
-    image: asset("/images/stn-r6-cutout.png"),
+    image: asset("/images/stn-r6.png"),
   },
   {
-    title: "Квадроциклы 200 / 650–750",
-    category: "ATV",
-    subtitle: "Тур с гидом, экипировкой, маршрутом и фото/видео",
-    specs: "200–750 кубов · АКПП · гид на отдельной технике",
-    fit: "для одного, пары или компактной компании",
-    from: "от 6 000 ₽/час",
+    title: "STN V6",
+    type: "enduro",
+    category: "Enduro",
+    subtitle: "Полноразмерный эндуро для новичка с небольшим опытом",
+    specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    fit: "рост 170–195 см · вес 60–105 кг · небольшой опыт / средний уровень",
+    from: "от 6 500 ₽/час",
+    accent: "from-fuchsia-500/30 via-orange-500/20 to-cyan-300/20",
+    image: asset("/images/stn-v6.png"),
+  },
+  {
+    title: "Apex RMG / Apex 125",
+    type: "pitbike",
+    category: "Pitbike",
+    subtitle: "Лёгкий питбайк для первого опыта, обучения и лёгких маршрутов",
+    specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
+    fit: "рост 150–175 см · вес 40–85 кг · первый опыт / обучение",
+    from: "от 4 500 ₽/час",
+    accent: "from-orange-500/40 via-fuchsia-500/20 to-cyan-300/20",
+    image: asset("/images/apex-rmg.png"),
+  },
+  {
+    title: "Wels Team 125",
+    type: "pitbike",
+    category: "Pitbike",
+    subtitle: "Компактный питбайк для новичков, подростков и лёгких маршрутов",
+    specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
+    fit: "рост 145–175 см · вес 40–85 кг · новичок / подросток",
+    from: "от 4 500 ₽/час",
+    accent: "from-cyan-300/35 via-fuchsia-500/20 to-white/10",
+    image: asset("/images/wels-team-125.png"),
+  },
+  {
+    title: "XGZ GTS PR300",
+    type: "enduro",
+    category: "Enduro",
+    subtitle: "Эндуро для уверенного новичка и среднего уровня",
+    specs: "271 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    fit: "рост 175–195 см · вес 65–105 кг · уверенный новичок / средний уровень",
+    from: "от 5 500 ₽/час",
+    accent: "from-cyan-300/35 via-fuchsia-500/20 to-yellow-200/10",
+    image: asset("/images/xgz-gts-pr300.png"),
+  },
+  {
+    title: "STN G9 Pro",
+    type: "enduro",
+    category: "Enduro Pro",
+    subtitle: "Мощный полноразмерный эндуро для активного катания",
+    specs: "300 см³ · 33 л.с. · колёса 21/18 · мощный полноразмерный эндуро",
+    fit: "рост 175–200 см · вес 70–110 кг · средний / опытный уровень",
+    from: "от 8 500 ₽/час",
+    accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
+    image: asset("/images/stn-g9-pro.png"),
+  },
+  {
+    title: "HISUN 750",
+    type: "quad",
+    category: "Квадроцикл",
+    subtitle: "Полноприводный туристический квадроцикл для тура с инструктором",
+    specs: "735 см³ · 53 л.с. · колёса 14″ · туристический 4×4 квадроцикл",
+    fit: "рост 165–200 см · нагрузка до 234 кг · 1–2 человека",
+    from: "от 8 000 ₽/час",
     accent: "from-lime-400/35 via-cyan-300/20 to-fuchsia-500/20",
-    image: asset("/images/quad-200-cutout.png"),
+    image: asset("/images/hisun-750.png"),
   },
   {
-    title: "Сноубайки",
-    category: "Winter",
-    subtitle: "Зимний формат для тех, кто хочет новый опыт",
-    specs: "сезонный формат · снежные маршруты",
-    fit: "условия и цена зависят от сезона",
+    title: "Avantis 200",
+    type: "quad",
+    category: "Квадроцикл",
+    subtitle: "Лёгкий утилитарный квадроцикл для новичка и спокойного маршрута",
+    specs: "200 см³ · 16 л.с. · резиновые колёса · лёгкий утилитарный квадроцикл",
+    fit: "рост 145–185 см · вес до 90–100 кг · 1 человек / взрослый + ребёнок",
+    from: "от 6 000 ₽/час",
+    accent: "from-lime-300/35 via-fuchsia-500/20 to-cyan-300/20",
+    image: asset("/images/avantis-200.png"),
+  },
+  {
+    title: "IRBIS 180",
+    type: "snowbike",
+    category: "Сноубайк",
+    subtitle: "Лёгкий сноубайк для спокойных зимних маршрутов",
+    specs: "180 см³ · 12 л.с. · гусеница 2626 × 380 мм · лёгкий сноубайк",
+    fit: "рост 160–195 см · вес до 150 кг · новичок / зимние маршруты",
     from: "по запросу",
     accent: "from-white/25 via-cyan-300/25 to-fuchsia-500/15",
-    image: asset("/images/snowbike-cutout.png"),
+    image: asset("/images/irbis-180.png"),
   },
+];
+
+const fleetFilters = [
+  { key: "all", label: "Все" },
+  { key: "enduro", label: "Enduro" },
+  { key: "pitbike", label: "Pitbike" },
+  { key: "quad", label: "Квадроцикл" },
+  { key: "snowbike", label: "Сноубайк" },
 ];
 
 const packages = {
@@ -119,14 +177,15 @@ const packages = {
     short: "Новичкам",
     label: "для новичков",
     hook: "Никогда не ездил? Начинай здесь.",
-    note: "Обязательно для всех без опыта. Также подходит опытным райдерам для роста навыка.",
+    note: "Обязательно для всех без опыта. Подбираем технику по росту, весу и уровню, чтобы первый выезд был безопасным и понятным.",
     items: [
-      { name: "Питбайк 125", price: "6 000 ₽/час", details: "Базовая посадка, газ, торможение, повороты. Лучший вход для новичка." },
-      { name: "BSE Z5 250", price: "7 000 ₽/час", details: "Полноразмерный эндуро, МКПП. Для тех, кто уже готов к большей технике." },
-      { name: "XGZ 300", price: "7 000 ₽/час", details: "Среднеразмерник с баланс-валом. Мягче по ощущениям, но уже серьёзный эндуро." },
-      { name: "STN R6 300", price: "7 500 ₽/час", details: "Полноразмерник, 25 лс. Для уверенного занятия с тренером." },
-      { name: "STN V6 300", price: "8 000 ₽/час", details: "Полноразмерник, 25 лс. Больше техники и нагрузки." },
-      { name: "STN G9 PRO 300", price: "9 000 ₽/час", details: "33 лс, водяное охлаждение, Loncin 176. Самый бодрый вариант в занятии." },
+      { name: "Apex RMG / Apex 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лучший вариант для первого опыта, обучения и лёгких маршрутов." },
+      { name: "Wels Team 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Подходит новичкам, подросткам и компактным райдерам." },
+      { name: "BSE Z5", price: "7 000 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро. Для новичка с базовой подготовкой и среднего уровня." },
+      { name: "XGZ GTS PR300", price: "7 000 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро. Для уверенного новичка и среднего уровня." },
+      { name: "STN R6", price: "7 500 ₽/час", details: "300 см³, около 25 л.с. Спокойный полноразмерный эндуро для обучения и ровных маршрутов." },
+      { name: "STN V6", price: "8 000 ₽/час", details: "300 см³, около 25 л.с. Для новичка с небольшим опытом и среднего уровня." },
+      { name: "STN G9 Pro", price: "9 000 ₽/час", details: "300 см³, 33 л.с. Мощный полноразмерный эндуро для среднего уровня и опытных райдеров." },
     ],
   },
   guided: {
@@ -134,14 +193,15 @@ const packages = {
     short: "Опытным",
     label: "с гидом",
     hook: "Уже ездил? Поехали в маршрут.",
-    note: "Только для опытных райдеров. Гид ведёт маршрут, ты получаешь эндуро-кайф без навигационной головной боли.",
+    note: "Формат для тех, кто уже уверенно управляет техникой. Гид ведёт маршрут, а ты получаешь эндуро-кайф без навигационной головной боли.",
     items: [
-      { name: "Питбайк 125", price: "5 500 ₽/час", details: "125 кубов, 12 лс, колёса 17/14." },
-      { name: "BSE Z5 250", price: "6 500 ₽/час", details: "250 кубов, 21 лс, полноразмерник." },
-      { name: "XGZ 300", price: "6 500 ₽/час", details: "300 кубов, 25 лс, среднеразмерник." },
-      { name: "STN R6 300", price: "7 000 ₽/час", details: "300 кубов, 25 лс, полноразмерник." },
-      { name: "STN V6 300", price: "7 500 ₽/час", details: "300 кубов, 25 лс, полноразмерник." },
-      { name: "STN G9 PRO 300", price: "8 500 ₽/час", details: "300 кубов, 33 лс, водяное охлаждение, Loncin 176." },
+      { name: "Apex RMG / Apex 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий мото-тур на питбайке." },
+      { name: "Wels Team 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк для лёгкого темпа." },
+      { name: "BSE Z5", price: "6 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
+      { name: "XGZ GTS PR300", price: "6 500 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "STN R6", price: "7 000 ₽/час", details: "300 см³, около 25 л.с., спокойный полноразмерный эндуро." },
+      { name: "STN V6", price: "7 500 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "STN G9 Pro", price: "8 500 ₽/час", details: "300 см³, 33 л.с., мощный полноразмерный эндуро для активного маршрута." },
     ],
   },
   quad: {
@@ -149,20 +209,30 @@ const packages = {
     short: "Компаниям",
     label: "с гидом",
     hook: "Хочешь с друзьями, парой или ребёнком?",
-    note: "Подходит для новичков, пар и компаний. Гид едет на отдельной технике, маршрут готов заранее.",
+    note: "Квадро-тур проходит с гидом на отдельной технике. Подходит новичкам, парам, компаниям и спокойным маршрутам.",
     items: [
       {
-        name: "Квадроцикл 200 кубов",
+        name: "Avantis 200",
         price: "6 000 ₽ — 1-й час · далее 5 000 ₽/час",
         details:
-          "Среднеразмерный, АКПП. Идеален для 1 человека 60–100 кг и ростом 150–180 см или 1 взрослый + ребёнок общей массой до 120 кг. Доп. пассажир — 500 ₽/час.",
+          "200 см³, 16 л.с., лёгкий утилитарный квадроцикл. Рост 145–185 см, вес до 90–100 кг. Посадка: 1 человек или 1 взрослый + ребёнок по согласованию. Доп. пассажир — 500 ₽/час.",
       },
       {
-        name: "Квадроцикл 650–750 кубов",
+        name: "HISUN 750",
         price: "8 000 ₽/час",
         details:
-          "Полноразмерная база, АКПП, 44–52 лс. Без ограничений по максимальному росту и весу. Доп. пассажир — 1 000 ₽/час.",
+          "735 см³, 53 л.с., туристический полноприводный квадроцикл. Рост 165–200 см, общая нагрузка до 234 кг. Посадка: 1–2 человека. Доп. пассажир — 1 000 ₽/час.",
       },
+    ],
+  },
+  snow: {
+    title: "Сноубайк",
+    short: "Зима",
+    label: "зимний формат",
+    hook: "Хочешь зимний внедорожный кайф?",
+    note: "Сезонный формат на лёгком сноубайке IRBIS 180. Цена и доступность зависят от сезона и состояния маршрутов.",
+    items: [
+      { name: "IRBIS 180", price: "по запросу", details: "180 см³, 12 л.с., гусеница 2626 × 380 мм. Рост 160–195 см, вес до 150 кг. Посадка: 1 человек." },
     ],
   },
   free: {
@@ -172,21 +242,23 @@ const packages = {
     hook: "Только если реально умеешь ездить.",
     note: "Только для опытных райдеров. Аренда от 1 часа, без нашего сопровождения.",
     items: [
-      { name: "Питбайк 125", price: "4 500 ₽/час", details: "125 кубов, 12 лс, колёса 17/14." },
-      { name: "BSE Z5 250", price: "5 500 ₽/час", details: "250 кубов, 21 лс, полноразмерник, колёса 21/18." },
-      { name: "XGZ 300", price: "5 500 ₽/час", details: "300 кубов, 25 лс, среднеразмерник, баланс-вал." },
-      { name: "STN R6 300", price: "6 000 ₽/час", details: "300 кубов, 25 лс, полноразмерник." },
-      { name: "STN V6 300", price: "6 500 ₽/час", details: "300 кубов, 25 лс, полноразмерник." },
+      { name: "Apex RMG / Apex 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий питбайк для самостоятельного катания." },
+      { name: "Wels Team 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк." },
+      { name: "BSE Z5", price: "5 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
+      { name: "XGZ GTS PR300", price: "5 500 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "STN R6", price: "6 000 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "STN V6", price: "6 500 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
     ],
   },
 };
 
-const packageOrder = ["training", "guided", "quad", "free"];
+const packageOrder = ["training", "guided", "quad", "snow", "free"];
 
 const picker = [
   { title: "Я новичок", text: "Хочу попробовать без риска", result: "Занятие с тренером", key: "training" },
   { title: "Я уже ездил", text: "Хочу маршрут, грязь и темп", result: "Мото-тур с гидом", key: "guided" },
   { title: "Едем компанией", text: "Друзья, пара, ребёнок, корпоратив", result: "Квадро-тур", key: "quad" },
+  { title: "Хочу зимой", text: "Снег, гусеница и новый опыт", result: "Сноубайк", key: "snow" },
   { title: "Хочу сам", text: "Есть опыт и нужен свободный формат", result: "Свободное катание", key: "free" },
 ];
 
@@ -453,7 +525,7 @@ function TechPreview({ selected, compact = false }) {
           alt={selected.title}
           className={`relative z-10 mx-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,.75)] ${compact ? "h-[210px]" : "h-[350px]"}`}
           animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
         />
         <div className="relative z-10 mt-2">
           <div className="text-[10px] font-black uppercase tracking-[0.24em] text-fuchsia-200 md:text-xs">{selected.category}</div>
@@ -495,9 +567,19 @@ function MobileStickyCta() {
 
 export default function EndurokaifLanding() {
   const [selected, setSelected] = useState(fleet[0]);
+  const [activeFleetFilter, setActiveFleetFilter] = useState("all");
   const [activePackage, setActivePackage] = useState("training");
   const [expanded, setExpanded] = useState(null);
   const currentPackage = packages[activePackage];
+  const displayedFleet = activeFleetFilter === "all" ? fleet : fleet.filter((item) => item.type === activeFleetFilter);
+
+  const handleFleetFilter = (key) => {
+    setActiveFleetFilter(key);
+    const nextItem = key === "all" ? fleet[0] : fleet.find((item) => item.type === key);
+    if (nextItem && (key === "all" || selected.type !== key)) {
+      setSelected(nextItem);
+    }
+  };
 
   const choosePackage = (key) => {
     setActivePackage(key);
@@ -574,7 +656,7 @@ export default function EndurokaifLanding() {
         <AnimatedBackground />
         <div className="relative mx-auto max-w-7xl">
           <SectionTitle eyebrow="быстрый выбор" title="Не знаешь, что выбрать?" />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {picker.map((item, index) => (
               <motion.button
                 key={item.title}
@@ -602,11 +684,27 @@ export default function EndurokaifLanding() {
       <section id="fleet" className="relative overflow-hidden bg-[#050505] px-5 py-16 md:px-8 md:py-28">
         <div className="absolute left-0 top-0 h-28 w-full bg-fuchsia-600/15 [clip-path:polygon(0_0,100%_0,100%_20%,0_80%)]" />
         <div className="relative mx-auto max-w-7xl">
-          <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Питбайки для старта, эндуро для опытных, квадроциклы для туров и компаний, сноубайки для зимнего формата." />
+          <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Эндуро, питбайки, квадроциклы и сноубайк — выбирай формат под опыт, сезон и компанию." />
+
+          <div className="mb-5 flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible">
+            {fleetFilters.map((filter) => (
+              <button
+                key={filter.key}
+                onClick={() => handleFleetFilter(filter.key)}
+                className={`shrink-0 rounded-full border px-4 py-2 text-xs font-black uppercase tracking-wide transition md:text-sm ${
+                  activeFleetFilter === filter.key
+                    ? "border-cyan-300 bg-cyan-300 text-black shadow-[0_0_28px_rgba(34,211,238,.25)]"
+                    : "border-white/10 bg-white/[0.04] text-white hover:border-fuchsia-400/50 hover:bg-fuchsia-500/[0.08]"
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
 
           <div className="grid gap-5 lg:grid-cols-[.85fr_1.15fr]">
             <div className="grid gap-3">
-              {fleet.map((item) => (
+              {displayedFleet.map((item) => (
                 <div key={item.title}>
                   <button onClick={() => setSelected(item)} className={`group w-full rounded-3xl border p-4 text-left transition-all md:p-5 ${selected.title === item.title ? "border-fuchsia-400 bg-fuchsia-600 text-white shadow-[0_0_40px_rgba(217,70,239,.26)]" : "border-white/10 bg-white/[0.04] text-white hover:border-cyan-300/45 hover:bg-cyan-300/[0.08]"}`}>
                     <div className="flex items-center justify-between gap-4">
