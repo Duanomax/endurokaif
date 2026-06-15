@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from "react";
+// VERSION: EQUIPMENT_LEFT_PLUS15_RIGHT_20260616
+import React, { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Bike,
@@ -26,10 +27,10 @@ const brand = {
   address:
     "Ленинградская обл., Всеволожский р-н, Юкковское сельское поселение, д. Медный Завод, коттеджный пос. Медное озеро",
   since: "с 2019 года",
-  telegram: "https://t.me/endurokaif",
-  whatsapp: "https://wa.me/79819547442",
-  phone: "tel:+79819547442",
-  max: "https://max.ru/endurokaif",
+  telegram: "https://t.me/Manya_chopokayfu_spb",
+  whatsapp: "https://wa.me/79119008922",
+  phone: "tel:+79119008922",
+  max: "https://max.ru/Manya_chopokayfu_spb",
 };
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
@@ -44,10 +45,10 @@ function GlobalStyles() {
 }
 
 const contacts = [
-  { title: "Telegram", text: "Основная запись", href: brand.telegram, primary: true, icon: MessageCircle },
-  { title: "WhatsApp", text: "Быстрый вопрос", href: brand.whatsapp, primary: false, icon: MessageCircle },
-  { title: "Позвонить", text: "+7 981 954-74-42", href: brand.phone, primary: false, icon: Phone },
-  { title: "MAX", text: "Написать в мессенджер", href: brand.max, primary: false, icon: MessageCircle },
+  { title: "Telegram", text: "@Manya_chopokayfu_spb", href: brand.telegram, primary: true, icon: MessageCircle },
+  { title: "WhatsApp", text: "+7 911 900-89-22", href: brand.whatsapp, primary: false, icon: MessageCircle },
+  { title: "Позвонить", text: "+7 911 900-89-22", href: brand.phone, primary: false, icon: Phone },
+  { title: "MAX", text: "@Manya_chopokayfu_spb", href: brand.max, primary: false, icon: MessageCircle },
 ];
 
 const fleet = [
@@ -57,7 +58,7 @@ const fleet = [
     category: "Enduro",
     subtitle: "Полноразмерный эндуро для базового входа и уверенного роста",
     specs: "250 см³ · 21 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Объём двигателя: 250 см³", "Мощность: 21 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
+    specsList: ["Двигатель: 250 см³", "Мощность: 21 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–195 см · вес 60–105 кг · новичок с базой / средний уровень",
     fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с базовой подготовкой / средний уровень"],
     from: "от 5 500 ₽/час",
@@ -69,8 +70,8 @@ const fleet = [
     type: "enduro",
     category: "Enduro",
     subtitle: "Спокойный полноразмерный эндуро для новичка и ровных маршрутов",
-    specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Объём двигателя: 300 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
+    specs: "300 см³ · 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Двигатель: 300 см³", "Мощность: 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–190 см · вес 60–105 кг · новичок / спокойные маршруты",
     fitList: ["Рост: 170–190 см", "Вес: 60–105 кг", "Уровень: новичок / спокойные эндуро-маршруты"],
     from: "от 6 000 ₽/час",
@@ -82,8 +83,8 @@ const fleet = [
     type: "enduro",
     category: "Enduro",
     subtitle: "Полноразмерный эндуро для новичка с небольшим опытом",
-    specs: "300 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Объём двигателя: 300 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
+    specs: "300 см³ · 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Двигатель: 300 см³", "Мощность: 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 170–195 см · вес 60–105 кг · небольшой опыт / средний уровень",
     fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с небольшим опытом / средний уровень"],
     from: "от 6 500 ₽/час",
@@ -96,7 +97,7 @@ const fleet = [
     category: "Pitbike",
     subtitle: "Лёгкий питбайк для первого опыта, обучения и лёгких маршрутов",
     specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
-    specsList: ["Объём двигателя: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
+    specsList: ["Двигатель: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
     fit: "рост 150–175 см · вес 40–85 кг · первый опыт / обучение",
     fitList: ["Рост: 150–175 см", "Вес: 40–85 кг", "Уровень: первый опыт / обучение / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
@@ -109,7 +110,7 @@ const fleet = [
     category: "Pitbike",
     subtitle: "Компактный питбайк для новичков, подростков и лёгких маршрутов",
     specs: "125 см³ · 12 л.с. · колёса 17/14 · питбайк",
-    specsList: ["Объём двигателя: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
+    specsList: ["Двигатель: 125 см³", "Мощность: 12 л.с.", "Колёса: 17/14", "Класс: питбайк"],
     fit: "рост 145–175 см · вес 40–85 кг · новичок / подросток",
     fitList: ["Рост: 145–175 см", "Вес: 40–85 кг", "Уровень: новичок / подросток / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
@@ -121,8 +122,8 @@ const fleet = [
     type: "enduro",
     category: "Enduro",
     subtitle: "Эндуро для уверенного новичка и среднего уровня",
-    specs: "271 см³ · около 25 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Объём двигателя: 271 см³", "Мощность: около 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
+    specs: "271 см³ · 25 л.с. · колёса 21/18 · полноразмерный эндуро",
+    specsList: ["Двигатель: 271 см³", "Мощность: 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
     fit: "рост 175–195 см · вес 65–105 кг · уверенный новичок / средний уровень",
     fitList: ["Рост: 175–195 см", "Вес: 65–105 кг", "Уровень: уверенный новичок / средний уровень"],
     from: "от 5 500 ₽/час",
@@ -135,7 +136,7 @@ const fleet = [
     category: "Enduro Pro",
     subtitle: "Мощный полноразмерный эндуро для активного катания",
     specs: "300 см³ · 33 л.с. · колёса 21/18 · мощный полноразмерный эндуро",
-    specsList: ["Объём двигателя: 300 см³", "Мощность: 33 л.с.", "Колёса: 21/18", "Класс: мощный полноразмерный эндуро"],
+    specsList: ["Двигатель: 300 см³", "Мощность: 33 л.с.", "Колёса: 21/18", "Класс: мощный полноразмерный эндуро"],
     fit: "рост 175–200 см · вес 70–110 кг · средний / опытный уровень",
     fitList: ["Рост: 175–200 см", "Вес: 70–110 кг", "Уровень: средний уровень / опытный райдер / активное эндуро"],
     from: "от 8 500 ₽/час",
@@ -148,7 +149,7 @@ const fleet = [
     category: "Квадроцикл",
     subtitle: "Полноприводный туристический квадроцикл для тура с инструктором",
     specs: "735 см³ · 53 л.с. · колёса 14″ · туристический 4x4 квадроцикл",
-    specsList: ["Объём двигателя: 735 см³", "Мощность: 53 л.с.", "Колёса: 14″", "Класс: туристический полноприводный квадроцикл"],
+    specsList: ["Двигатель: 735 см³", "Мощность: 53 л.с.", "Колёса: 14″", "Класс: туристический полноприводный квадроцикл"],
     fit: "рост 165–200 см · нагрузка до 234 кг · 1–2 человека",
     fitList: ["Рост: 165–200 см", "Вес: до 234 кг общей нагрузки", "Уровень: новичок с инструктором / уверенный райдер", "Посадка: 1–2 человека"],
     from: "от 8 000 ₽/час",
@@ -160,8 +161,8 @@ const fleet = [
     type: "quad",
     category: "Квадроцикл",
     subtitle: "Лёгкий утилитарный квадроцикл для новичка и спокойного маршрута",
-    specs: "200 см³ · 16 л.с. · лёгкий утилитарный квадроцикл",
-    specsList: ["Объём двигателя: 200 см³", "Мощность: 16 л.с.", "Колёса: резиновые", "Класс: лёгкий утилитарный квадроцикл"],
+    specs: "200 см³ · 16 л.с. · колёса 10 дюймов · лёгкий утилитарный квадроцикл",
+    specsList: ["Двигатель: 200 см³", "Мощность: 16 л.с.", "Колёса: 10 дюймов", "Класс: лёгкий утилитарный квадроцикл"],
     fit: "рост 145–185 см · вес до 90–100 кг · 1 человек / 1 взрослый + ребёнок",
     fitList: ["Рост: 145–185 см", "Вес: до 90–100 кг", "Уровень: новичок / подросток / спокойные маршруты", "Посадка: 1 человек / 1 взрослый + ребёнок по согласованию"],
     from: "от 6 000 ₽/час",
@@ -174,7 +175,7 @@ const fleet = [
     category: "Сноубайк",
     subtitle: "Лёгкий сноубайк для зимних спокойных маршрутов",
     specs: "180 см³ · 12 л.с. · гусеница 2626 × 380 мм · лёгкий сноубайк",
-    specsList: ["Объём двигателя: 180 см³", "Мощность: 12 л.с.", "Гусеница: 2626 × 380 мм", "Класс: лёгкий сноубайк / зимняя внедорожная техника"],
+    specsList: ["Двигатель: 180 см³", "Мощность: 12 л.с.", "Гусеница: 2626 × 380 мм", "Класс: лёгкий сноубайк / зимняя внедорожная техника"],
     fit: "рост 160–195 см · вес до 150 кг · новичок / зимние маршруты",
     fitList: ["Рост: 160–195 см", "Вес: до 150 кг", "Уровень: новичок / спокойные зимние маршруты", "Посадка: 1 человек"],
     from: "по запросу",
@@ -183,6 +184,14 @@ const fleet = [
   },
 ];
 
+
+const fleetFilters = [
+  { key: "all", label: "Все" },
+  { key: "enduro", label: "Enduro" },
+  { key: "pitbike", label: "Pitbike" },
+  { key: "quad", label: "Квадроцикл" },
+  { key: "snowbike", label: "Сноубайк" },
+];
 
 const packages = {
   training: {
@@ -195,9 +204,9 @@ const packages = {
       { name: "Apex RMG / Apex 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лучший вариант для первого опыта, обучения и лёгких маршрутов." },
       { name: "Wels Team 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Подходит новичкам, подросткам и компактным райдерам." },
       { name: "BSE Z5", price: "7 000 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро. Для новичка с базовой подготовкой и среднего уровня." },
-      { name: "XGZ GTS PR300", price: "7 000 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро. Для уверенного новичка и среднего уровня." },
-      { name: "STN R6", price: "7 500 ₽/час", details: "300 см³, около 25 л.с. Спокойный полноразмерный эндуро для обучения и ровных маршрутов." },
-      { name: "STN V6", price: "8 000 ₽/час", details: "300 см³, около 25 л.с. Для новичка с небольшим опытом и среднего уровня." },
+      { name: "XGZ GTS PR300", price: "7 000 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро. Для уверенного новичка и среднего уровня." },
+      { name: "STN R6", price: "7 500 ₽/час", details: "300 см³, 25 л.с. Спокойный полноразмерный эндуро для обучения и ровных маршрутов." },
+      { name: "STN V6", price: "8 000 ₽/час", details: "300 см³, 25 л.с. Для новичка с небольшим опытом и среднего уровня." },
       { name: "STN G9 Pro", price: "9 000 ₽/час", details: "300 см³, 33 л.с. Мощный полноразмерный эндуро для среднего уровня и опытных райдеров." },
     ],
   },
@@ -211,9 +220,9 @@ const packages = {
       { name: "Apex RMG / Apex 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий мото-тур на питбайке." },
       { name: "Wels Team 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк для лёгкого темпа." },
       { name: "BSE Z5", price: "6 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
-      { name: "XGZ GTS PR300", price: "6 500 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро." },
-      { name: "STN R6", price: "7 000 ₽/час", details: "300 см³, около 25 л.с., спокойный полноразмерный эндуро." },
-      { name: "STN V6", price: "7 500 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "XGZ GTS PR300", price: "6 500 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро." },
+      { name: "STN R6", price: "7 000 ₽/час", details: "300 см³, 25 л.с., спокойный полноразмерный эндуро." },
+      { name: "STN V6", price: "7 500 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
       { name: "STN G9 Pro", price: "8 500 ₽/час", details: "300 см³, 33 л.с., мощный полноразмерный эндуро для активного маршрута." },
     ],
   },
@@ -248,9 +257,9 @@ const packages = {
       { name: "Apex RMG / Apex 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий питбайк для самостоятельного катания." },
       { name: "Wels Team 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк." },
       { name: "BSE Z5", price: "5 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
-      { name: "XGZ GTS PR300", price: "5 500 ₽/час", details: "271 см³, около 25 л.с., полноразмерный эндуро." },
-      { name: "STN R6", price: "6 000 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
-      { name: "STN V6", price: "6 500 ₽/час", details: "300 см³, около 25 л.с., полноразмерный эндуро." },
+      { name: "XGZ GTS PR300", price: "5 500 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро." },
+      { name: "STN R6", price: "6 000 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
+      { name: "STN V6", price: "6 500 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
     ],
   },
 };
@@ -265,19 +274,25 @@ const picker = [
 ];
 
 const included = [
-  "Тур или занятие по выбранному формату",
-  "Гид на отдельной технике для туров",
-  "Подготовленная техника",
-  "Бак бензина",
-  "Комплект экипировки",
   "Вводный инструктаж по безопасности",
-  "Подготовленные маршруты",
+  "Подготовленная техника",
+  "Комплект экипировки",
+  "Бак бензина",
   "Вода + перекус",
   "Фото/видео на память",
-  "Участие в беспроигрышной лотерее",
+  "Гид на отдельной технике для туров",
 ];
 
-const gear = ["Шлем", "Очки", "Балаклава", "Джерси", "Перчатки"];
+const gear = [
+  "Шлем",
+  "Очки",
+  "Балаклава",
+  "Черепаха",
+  "Налокотники",
+  "Перчатки",
+  "Наколенники",
+  "Мото боты",
+];
 
 const benefits = [
   {
@@ -440,7 +455,7 @@ function LocationMap() {
   return (
     <section id="location" className="relative overflow-hidden bg-black px-5 py-20 md:px-8 md:py-28">
       <AnimatedBackground />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto w-full max-w-7xl">
         <SectionTitle eyebrow="точка старта" title="Стартуем у Медного озера" />
         <div className="grid gap-6 lg:grid-cols-[.85fr_1.15fr] lg:items-stretch">
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-7">
@@ -484,35 +499,288 @@ function RealRideGallery() {
     { src: asset("/images/ride-real-4.jpg"), title: "Квадро + эндуро" },
     { src: asset("/images/ride-real-5.jpg"), title: "Квадро-тур крупным планом" },
     { src: asset("/images/ride-real-6.jpg"), title: "Зимний кайф" },
+    { src: asset("/images/gallery/ride-gallery-07.jpg"), title: "Покатушка #7" },
+    { src: asset("/images/gallery/ride-gallery-08.jpg"), title: "Покатушка #8" },
+    { src: asset("/images/gallery/ride-gallery-09.jpg"), title: "Покатушка #9" },
+    { src: asset("/images/gallery/ride-gallery-10.jpg"), title: "Покатушка #10" },
+    { src: asset("/images/gallery/ride-gallery-11.jpg"), title: "Покатушка #11" },
+    { src: asset("/images/gallery/ride-gallery-12.jpg"), title: "Покатушка #12" },
+    { src: asset("/images/gallery/ride-gallery-13.jpg"), title: "Покатушка #13" },
+    { src: asset("/images/gallery/ride-gallery-14.jpg"), title: "Покатушка #14" },
+    { src: asset("/images/gallery/ride-gallery-15.jpg"), title: "Покатушка #15" },
+    { src: asset("/images/gallery/ride-gallery-16.jpg"), title: "Покатушка #16" },
+    { src: asset("/images/gallery/ride-gallery-17.jpg"), title: "Покатушка #17" },
+    { src: asset("/images/gallery/ride-gallery-18.jpg"), title: "Покатушка #18" },
+    { src: asset("/images/gallery/ride-gallery-19.jpg"), title: "Покатушка #19" },
+    { src: asset("/images/gallery/ride-gallery-20.jpg"), title: "Покатушка #20" },
+    { src: asset("/images/gallery/ride-gallery-21.jpg"), title: "Покатушка #21" },
+    { src: asset("/images/gallery/ride-gallery-22.jpg"), title: "Покатушка #22" },
+    { src: asset("/images/gallery/ride-gallery-23.jpg"), title: "Покатушка #23" },
   ];
+
+  const previewPhotos = photos.slice(0, 6);
+
+  const [activePhoto, setActivePhoto] = useState(null);
+  const pointerStartX = useRef(null);
+
+  const openPhoto = (index) => setActivePhoto(index);
+  const closePhoto = () => setActivePhoto(null);
+
+  const showPhoto = (offset) => {
+    if (activePhoto === null) return;
+    setActivePhoto((activePhoto + offset + photos.length) % photos.length);
+  };
+
+  const handlePointerDown = (event) => {
+    pointerStartX.current = event.clientX;
+  };
+
+  const handlePointerUp = (event) => {
+    if (pointerStartX.current === null) return;
+
+    const deltaX = event.clientX - pointerStartX.current;
+    pointerStartX.current = null;
+
+    if (Math.abs(deltaX) < 44) return;
+    showPhoto(deltaX < 0 ? 1 : -1);
+  };
 
   return (
     <section id="photos" className="relative overflow-hidden bg-[#050505] px-5 py-20 md:px-8 md:py-28">
       <AnimatedBackground />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto w-full max-w-7xl">
         <SectionTitle eyebrow="реальные покатушки" title="Живой оффроуд без постановки" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {photos.map((photo, index) => (
-            <motion.div
+          {previewPhotos.map((photo, index) => (
+            <motion.button
+              type="button"
               key={photo.src}
+              onClick={() => openPhoto(index)}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.5, delay: index * 0.07 }}
-              className="group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] md:min-h-[420px]"
+              transition={{ duration: 0.5, delay: Math.min(index, 8) * 0.04 }}
+              className="group relative min-h-[320px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] text-left md:min-h-[380px]"
             >
               <img src={photo.src} alt={photo.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute left-5 right-5 top-5 h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Эндурокайф</div>
                 <div className="mt-2 text-2xl font-black">{photo.title}</div>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
       </div>
+
+      {activePhoto !== null && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/92 p-4 backdrop-blur-xl" onClick={closePhoto}>
+          <button
+            type="button"
+            onClick={closePhoto}
+            className="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 text-3xl leading-none text-white transition hover:bg-white/20"
+            aria-label="Закрыть галерею"
+          >
+            ×
+          </button>
+
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPhoto(-1);
+            }}
+            className="absolute left-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/65 text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,.16)] backdrop-blur transition hover:border-cyan-300/45 hover:bg-cyan-300/10 md:left-8 md:h-14 md:w-14"
+            aria-label="Предыдущее фото"
+          >
+            <ChevronRight className="h-6 w-6 rotate-180" />
+          </button>
+
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPhoto(1);
+            }}
+            className="absolute right-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/65 text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,.16)] backdrop-blur transition hover:border-cyan-300/45 hover:bg-cyan-300/10 md:right-8 md:h-14 md:w-14"
+            aria-label="Следующее фото"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div
+            className="relative z-20 flex h-full max-h-[88vh] w-full max-w-6xl touch-pan-y flex-col items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={() => {
+              pointerStartX.current = null;
+            }}
+          >
+            <img
+              src={photos[activePhoto].src}
+              alt={photos[activePhoto].title}
+              className="max-h-[78vh] w-full rounded-[1.5rem] object-contain shadow-[0_40px_120px_rgba(0,0,0,.75)]"
+            />
+            <div className="mt-4 text-center">
+              <div className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">
+                {activePhoto + 1} / {photos.length}
+              </div>
+              <div className="mt-1 text-xl font-black text-white">{photos[activePhoto].title}</div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
+  );
+}
+
+
+function FleetCarousel({ items, selected, onSelect }) {
+  const pointerStartX = useRef(null);
+
+  if (!items.length) {
+    return null;
+  }
+
+  const selectedIndex = Math.max(0, items.findIndex((item) => item.title === selected.title));
+  const canMove = items.length > 1;
+
+  const selectByOffset = (offset) => {
+    if (!canMove) return;
+    const nextIndex = (selectedIndex + offset + items.length) % items.length;
+    onSelect(items[nextIndex]);
+  };
+
+  const getItemByOffset = (offset) => {
+    const index = (selectedIndex + offset + items.length) % items.length;
+    return items[index];
+  };
+
+  const handlePointerDown = (event) => {
+    pointerStartX.current = event.clientX;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const handlePointerUp = (event) => {
+    if (pointerStartX.current === null) return;
+
+    const deltaX = event.clientX - pointerStartX.current;
+    pointerStartX.current = null;
+
+    if (Math.abs(deltaX) < 42) return;
+    selectByOffset(deltaX < 0 ? 1 : -1);
+  };
+
+  const sideCards = [
+    { item: getItemByOffset(-1), offset: -1, label: "Предыдущая модель" },
+    { item: getItemByOffset(1), offset: 1, label: "Следующая модель" },
+  ];
+
+  return (
+    <div
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={() => {
+        pointerStartX.current = null;
+      }}
+      className="relative mx-auto max-w-6xl touch-pan-y select-none"
+    >
+      <div className="pointer-events-none absolute inset-y-8 left-0 z-0 hidden w-1/3 rounded-[2rem] bg-fuchsia-600/10 blur-2xl md:block" />
+      <div className="pointer-events-none absolute inset-y-8 right-0 z-0 hidden w-1/3 rounded-[2rem] bg-cyan-300/10 blur-2xl md:block" />
+
+      {sideCards.map(({ item, offset, label }) => (
+        <button
+          type="button"
+          key={`${item.title}-${offset}`}
+          onPointerDown={(event) => event.stopPropagation()}
+          onPointerUp={(event) => event.stopPropagation()}
+          onClick={(event) => {
+            event.stopPropagation();
+            selectByOffset(offset);
+          }}
+          className={`absolute top-16 z-10 hidden w-[30%] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-4 text-left opacity-55 blur-[0.5px] transition hover:opacity-80 hover:blur-0 md:block ${
+            offset < 0 ? "left-0" : "right-0"
+          }`}
+          aria-label={label}
+        >
+          <div className={`relative h-[340px] overflow-hidden rounded-[1.6rem] bg-gradient-to-br ${item.accent}`}>
+            <div className="absolute inset-0 bg-black/55" />
+            <motion.img
+              src={item.image}
+              alt={item.title}
+              className="relative z-10 mx-auto h-[255px] w-full scale-110 object-contain opacity-80 drop-shadow-[0_28px_35px_rgba(0,0,0,.75)]"
+              animate={{ y: [0, -7, 0] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <div className="absolute inset-x-4 bottom-4 z-10">
+              <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-100">{item.category}</div>
+              <div className="mt-1 truncate text-xl font-black text-white">{item.title}</div>
+            </div>
+          </div>
+        </button>
+      ))}
+
+      <button
+        type="button"
+        onPointerDown={(event) => event.stopPropagation()}
+        onPointerUp={(event) => event.stopPropagation()}
+        onClick={(event) => {
+          event.stopPropagation();
+          selectByOffset(-1);
+        }}
+        disabled={!canMove}
+        className="absolute left-2 top-[220px] z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/70 text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,.18)] backdrop-blur transition hover:border-cyan-300/45 hover:bg-cyan-300/10 disabled:opacity-30 md:left-4 md:top-[270px] md:h-12 md:w-12"
+        aria-label="Предыдущая техника"
+      >
+        <ChevronRight className="h-5 w-5 rotate-180" />
+      </button>
+
+      <button
+        type="button"
+        onPointerDown={(event) => event.stopPropagation()}
+        onPointerUp={(event) => event.stopPropagation()}
+        onClick={(event) => {
+          event.stopPropagation();
+          selectByOffset(1);
+        }}
+        disabled={!canMove}
+        className="absolute right-2 top-[220px] z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/70 text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,.18)] backdrop-blur transition hover:border-cyan-300/45 hover:bg-cyan-300/10 disabled:opacity-30 md:right-4 md:top-[270px] md:h-12 md:w-12"
+        aria-label="Следующая техника"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      <motion.div
+        key={selected.title}
+        initial={{ opacity: 0, scale: 0.96, x: 24 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ duration: 0.35 }}
+        className="relative z-20 mx-auto overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-[0_40px_120px_rgba(0,0,0,.58)] md:w-[68%]"
+      >
+        <TechPreview selected={selected} compact />
+      </motion.div>
+
+      <div className="mt-5 flex justify-center gap-2">
+        {items.map((item) => (
+          <button
+            type="button"
+            key={item.title}
+            onPointerDown={(event) => event.stopPropagation()}
+            onPointerUp={(event) => event.stopPropagation()}
+            onClick={(event) => {
+              event.stopPropagation();
+              onSelect(item);
+            }}
+            className={`h-2.5 rounded-full transition-all ${
+              item.title === selected.title ? "w-8 bg-fuchsia-500 shadow-[0_0_18px_rgba(217,70,239,.65)]" : "w-2.5 bg-white/20 hover:bg-cyan-300/60"
+            }`}
+            aria-label={item.title}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -672,9 +940,9 @@ export default function EndurokaifLanding() {
 
       <section id="picker" className="relative overflow-hidden bg-black px-5 py-14 md:px-8 md:py-28">
         <AnimatedBackground />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="быстрый выбор" title="Не знаешь, что выбрать?" />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+          <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2 lg:grid-cols-4">
             {picker.map((item, index) => (
               <motion.button
                 key={item.title}
@@ -701,10 +969,10 @@ export default function EndurokaifLanding() {
 
       <section id="fleet" className="relative overflow-hidden bg-[#050505] px-5 py-16 md:px-8 md:py-28">
         <div className="absolute left-0 top-0 h-28 w-full bg-fuchsia-600/15 [clip-path:polygon(0_0,100%_0,100%_20%,0_80%)]" />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Эндуро, питбайки, квадроциклы и сноубайк — выбирай формат под опыт, сезон и компанию." />
 
-          <div className="mb-5 flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible">
+          <div className="mb-6 flex flex-wrap justify-center gap-2 pb-2">
             {fleetFilters.map((filter) => (
               <button
                 key={filter.key}
@@ -720,45 +988,13 @@ export default function EndurokaifLanding() {
             ))}
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[.85fr_1.15fr]">
-            <div className="grid gap-3">
-              {displayedFleet.map((item) => (
-                <div key={item.title}>
-                  <button onClick={() => setSelected(item)} className={`group w-full rounded-3xl border p-4 text-left transition-all md:p-5 ${selected.title === item.title ? "border-fuchsia-400 bg-fuchsia-600 text-white shadow-[0_0_40px_rgba(217,70,239,.26)]" : "border-white/10 bg-white/[0.04] text-white hover:border-cyan-300/45 hover:bg-cyan-300/[0.08]"}`}>
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-200 md:text-xs">{item.category}</div>
-                        <div className="mt-1 text-xl font-black md:text-2xl">{item.title}</div>
-                        <div className={`mt-1 text-sm ${selected.title === item.title ? "text-white/75" : "text-zinc-400"}`}>{item.subtitle}</div>
-                      </div>
-                      <ChevronRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </button>
-
-                  {selected.title === item.title && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.35 }}
-                      className="mt-3 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] lg:hidden"
-                    >
-                      <TechPreview selected={selected} compact />
-                    </motion.div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <motion.div key={selected.title} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="hidden overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] lg:block">
-              <TechPreview selected={selected} />
-            </motion.div>
-          </div>
+          <FleetCarousel items={displayedFleet} selected={selected} onSelect={setSelected} />
         </div>
       </section>
 
       <section id="prices" className="relative overflow-hidden bg-black px-5 py-14 md:px-8 md:py-28">
         <AnimatedBackground />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="цены и форматы" title="Выбери пакет под свой опыт" />
 
           <div className="grid gap-3 md:hidden">
@@ -863,28 +1099,59 @@ export default function EndurokaifLanding() {
 
       <section id="included" className="relative overflow-hidden bg-[#050505] px-5 py-14 md:px-8 md:py-28">
         <AnimatedBackground />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="что входит" title="В цене не только техника" />
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
-            <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid items-stretch gap-8 lg:grid-cols-[.86fr_1.14fr]">
+            <div
+              className="grid h-full gap-3"
+              style={{ gridTemplateRows: `repeat(${included.length}, minmax(0, 1fr))` }}
+            >
               {included.map((item) => (
-                <div key={item} className="flex items-start gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3 transition hover:border-fuchsia-400/45 md:gap-3 md:rounded-3xl md:p-5">
-                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-xs font-black text-black md:h-7 md:w-7 md:text-sm">✓</div>
-                  <div className="text-sm font-semibold text-zinc-100 md:text-base">{item}</div>
+                <div
+                  key={item}
+                  className="flex min-h-[72px] items-center gap-3 rounded-[1.6rem] border border-white/10 bg-black/50 p-4 transition hover:border-fuchsia-400/45 md:min-h-[86px] md:rounded-3xl md:p-5 lg:min-h-0"
+                >
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-sm font-black text-black">
+                    ✓
+                  </div>
+                  <div className="text-base font-bold leading-snug text-zinc-100 md:text-lg">{item}</div>
                 </div>
               ))}
             </div>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-7">
-              <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-fuchsia-500/20 blur-3xl" />
-              <div className="relative mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-600 text-white">
-                <ShieldCheck className="h-7 w-7" />
-              </div>
-              <h3 className="relative text-3xl font-black">Экипировка</h3>
-              <p className="relative mt-3 leading-7 text-zinc-400">Перед выездом выдаём базовый комплект, чтобы клиент не думал, что ему нужно покупать всё заранее.</p>
-              <div className="relative mt-6 flex flex-wrap gap-2">
-                {gear.map((item) => (
-                  <span key={item} className="rounded-full bg-white/10 px-4 py-2 text-sm font-black uppercase text-zinc-200">{item}</span>
-                ))}
+
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] px-4 pb-5 pt-5 md:px-6 md:pb-6 md:pt-6">
+              <h3 className="text-3xl font-black">Экипировка</h3>
+
+              <div className="relative mt-4 flex flex-1 flex-col overflow-hidden rounded-[1.8rem] border border-white/10 bg-gradient-to-b from-white/[0.06] via-white/[0.03] to-transparent px-2 pt-2">
+                <div className="relative flex min-h-[430px] flex-1 items-center justify-center sm:min-h-[500px] md:min-h-[560px]">
+                  <div className="flex h-full w-full items-end justify-center">
+                    <div className="inline-flex items-end justify-center -space-x-16 sm:-space-x-20 md:-space-x-24">
+                      <img
+                        src={asset("/images/equipment-rider-front.png")}
+                        alt="Экипировка райдера спереди"
+                        className="pointer-events-none h-[100%] max-h-[760px] w-auto translate-x-[4.25rem] object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:translate-x-[5rem] md:translate-x-[5.75rem]"
+                      />
+                      <img
+                        src={asset("/images/equipment-rider-back.png")}
+                        alt="Экипировка райдера сзади"
+                        className="pointer-events-none h-[100%] max-h-[760px] w-auto -translate-x-4 object-contain drop-shadow-[0_34px_80px_rgba(0,0,0,.55)] sm:-translate-x-6 md:-translate-x-8"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative pb-3">
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {gear.map((item) => (
+                      <span
+                        key={item}
+                        className="inline-flex min-h-[32px] items-center rounded-full border border-white/10 bg-black/55 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-zinc-100 shadow-[0_0_18px_rgba(0,0,0,.18)] sm:text-xs md:min-h-[36px] md:px-3.5"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -894,7 +1161,7 @@ export default function EndurokaifLanding() {
       <section id="format" className="relative overflow-hidden bg-black px-5 py-20 md:px-8 md:py-28">
         <AnimatedBackground />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/60 to-transparent" />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="почему мы" title="Мотокайф с нормальной организацией" />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {benefits.map((item, index) => {
@@ -916,7 +1183,7 @@ export default function EndurokaifLanding() {
 
       <section className="relative overflow-hidden bg-[#050505] px-5 py-20 md:px-8 md:py-28">
         <AnimatedBackground />
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="как всё проходит" title="Путь до старта" />
 
           <div className="relative">
