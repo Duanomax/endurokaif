@@ -1,4 +1,4 @@
-// VERSION: EQUIPMENT_MOBILE_IMAGES_20_PERCENT_SMALLER_20260616
+// VERSION: FLEET_STN_R6_UPDATE_BSE_REMOVED_20260827
 import React, { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -21,16 +21,16 @@ import {
 } from "lucide-react";
 
 const brand = {
-  name: "Эндурокайф",
-  city: "Санкт-Петербург",
-  shortPlace: "Медное озеро",
+  name: "ЭНДУРОКАЙФ",
+  city: "САНКТ-ПЕТЕРБУРГ",
+  shortPlace: "СЕВЕР ГОРОДА",
   address:
-    "Ленинградская обл., Всеволожский р-н, Юкковское сельское поселение, д. Медный Завод, коттеджный пос. Медное озеро",
-  since: "с 2019 года",
-  telegram: "https://t.me/Manya_chopokayfu_spb",
-  whatsapp: "https://wa.me/79119008922",
-  phone: "tel:+79119008922",
-  max: "https://max.ru/Manya_chopokayfu_spb",
+    "Ленинградская обл., Всеволожский р-н, Юкковское сельское поселение, д. Медный Завод, озеро Меднозаводский разлив",
+  since: "ОЗЕРО МЕДНОЗАВОДСКИЙ РАЗЛИВ",
+  telegram: "https://t.me/ENDUROKAIFF",
+  instagram: "https://instagram.com/chopokayfu_spb",
+  vk: "https://vk.com/chopokayfu_spb_prokat",
+  phone: "tel:+79819547442",
 };
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
@@ -45,37 +45,37 @@ function GlobalStyles() {
 }
 
 const contacts = [
-  { title: "Telegram", text: "@Manya_chopokayfu_spb", href: brand.telegram, primary: true, icon: MessageCircle },
-  { title: "WhatsApp", text: "+7 911 900-89-22", href: brand.whatsapp, primary: false, icon: MessageCircle },
-  { title: "Позвонить", text: "+7 911 900-89-22", href: brand.phone, primary: false, icon: Phone },
-  { title: "MAX", text: "@Manya_chopokayfu_spb", href: brand.max, primary: false, icon: MessageCircle },
+  { title: "Telegram", text: "@ENDUROKAIFF", href: brand.telegram, primary: true, icon: MessageCircle },
+  { title: "Instagram", text: "@CHOPOKAYFU_SPB", href: brand.instagram, primary: false, icon: MessageCircle },
+  { title: "VK", text: "@chopokayfu_spb_prokat", href: brand.vk, primary: false, icon: MessageCircle },
+  { title: "Позвонить", text: "89819547442", href: brand.phone, primary: false, icon: Phone },
 ];
 
 const fleet = [
   {
-    title: "BSE Z5",
-    type: "enduro",
-    category: "Enduro",
-    subtitle: "Полноразмерный эндуро для базового входа и уверенного роста",
-    specs: "250 см³ · 21 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Двигатель: 250 см³", "Мощность: 21 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
-    fit: "рост 170–195 см · вес 60–105 кг · новичок с базой / средний уровень",
-    fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с базовой подготовкой / средний уровень"],
-    from: "от 5 500 ₽/час",
-    accent: "from-yellow-300/35 via-fuchsia-500/20 to-cyan-300/20",
-    image: asset("/images/bse-z5.png"),
-  },
-  {
     title: "STN R6",
     type: "enduro",
     category: "Enduro",
-    subtitle: "Спокойный полноразмерный эндуро для новичка и ровных маршрутов",
-    specs: "300 см³ · 25 л.с. · колёса 21/18 · полноразмерный эндуро",
-    specsList: ["Двигатель: 300 см³", "Мощность: 25 л.с.", "Колёса: 21/18", "Класс: полноразмерный эндуро"],
-    fit: "рост 170–190 см · вес 60–105 кг · новичок / спокойные маршруты",
-    fitList: ["Рост: 170–190 см", "Вес: 60–105 кг", "Уровень: новичок / спокойные эндуро-маршруты"],
-    from: "от 6 000 ₽/час",
-    accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
+    subtitle:
+      "Один из самых сбалансированных мотоциклов в нашем парке. На нём комфортно учиться: он не слишком резкий, но уверенно тянет на подъёмах и не теряется на техничных участках. Отличный вариант для занятий с тренером и самостоятельных заездов.",
+    specs: "300 см³ · 25 л.с. · колёса 21/18 · седло 920–940 мм · полноразмерный эндуро",
+    specsList: [
+      "Двигатель: 4-тактный PR300 (175FMN), 300 см³",
+      "Мощность: 25 л.с.",
+      "Колёса: 21 дюйм спереди, 18 дюймов сзади",
+      "Класс: полноразмерный эндуро",
+      "Высота по седлу: 920–940 мм",
+    ],
+    fit: "рост 170–190 см · вес 60–100 кг · новичок / средний уровень / опытный райдер",
+    fitList: [
+      "Рост: оптимально 170–190 см",
+      "Вес: 60–100 кг",
+      "Новички: отлично подходит",
+      "Средний уровень: хороший баланс",
+      "Опытные райдеры: техничные участки и долгие маршруты, но не агрессивный экстрим",
+    ],
+    from: "от 5 500 ₽/час",
+    accent: "from-orange-500/35 via-[#C800DE]/20 to-cyan-300/20",
     image: asset("/images/stn-r6.png"),
   },
   {
@@ -88,7 +88,7 @@ const fleet = [
     fit: "рост 170–195 см · вес 60–105 кг · небольшой опыт / средний уровень",
     fitList: ["Рост: 170–195 см", "Вес: 60–105 кг", "Уровень: новичок с небольшим опытом / средний уровень"],
     from: "от 6 500 ₽/час",
-    accent: "from-fuchsia-500/30 via-orange-500/20 to-cyan-300/20",
+    accent: "from-[#C800DE]/30 via-orange-500/20 to-cyan-300/20",
     image: asset("/images/stn-v6.png"),
   },
   {
@@ -101,7 +101,7 @@ const fleet = [
     fit: "рост 150–175 см · вес 40–85 кг · первый опыт / обучение",
     fitList: ["Рост: 150–175 см", "Вес: 40–85 кг", "Уровень: первый опыт / обучение / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
-    accent: "from-orange-500/40 via-fuchsia-500/20 to-cyan-300/20",
+    accent: "from-orange-500/40 via-[#C800DE]/20 to-cyan-300/20",
     image: asset("/images/apex-rmg.png"),
   },
   {
@@ -114,7 +114,7 @@ const fleet = [
     fit: "рост 145–175 см · вес 40–85 кг · новичок / подросток",
     fitList: ["Рост: 145–175 см", "Вес: 40–85 кг", "Уровень: новичок / подросток / лёгкие маршруты"],
     from: "от 4 500 ₽/час",
-    accent: "from-cyan-300/35 via-fuchsia-500/20 to-white/10",
+    accent: "from-cyan-300/35 via-[#C800DE]/20 to-white/10",
     image: asset("/images/wels-team-125.png"),
   },
   {
@@ -127,7 +127,7 @@ const fleet = [
     fit: "рост 175–195 см · вес 65–105 кг · уверенный новичок / средний уровень",
     fitList: ["Рост: 175–195 см", "Вес: 65–105 кг", "Уровень: уверенный новичок / средний уровень"],
     from: "от 5 500 ₽/час",
-    accent: "from-cyan-300/35 via-fuchsia-500/20 to-yellow-200/10",
+    accent: "from-cyan-300/35 via-[#C800DE]/20 to-yellow-200/10",
     image: asset("/images/xgz-gts-pr300.png"),
   },
   {
@@ -140,7 +140,7 @@ const fleet = [
     fit: "рост 175–200 см · вес 70–110 кг · средний / опытный уровень",
     fitList: ["Рост: 175–200 см", "Вес: 70–110 кг", "Уровень: средний уровень / опытный райдер / активное эндуро"],
     from: "от 8 500 ₽/час",
-    accent: "from-orange-500/35 via-fuchsia-500/20 to-cyan-300/20",
+    accent: "from-orange-500/35 via-[#C800DE]/20 to-cyan-300/20",
     image: asset("/images/stn-g9-pro.png"),
   },
   {
@@ -153,7 +153,7 @@ const fleet = [
     fit: "рост 165–200 см · нагрузка до 234 кг · 1–2 человека",
     fitList: ["Рост: 165–200 см", "Вес: до 234 кг общей нагрузки", "Уровень: новичок с инструктором / уверенный райдер", "Посадка: 1–2 человека"],
     from: "от 8 000 ₽/час",
-    accent: "from-lime-400/35 via-cyan-300/20 to-fuchsia-500/20",
+    accent: "from-lime-400/35 via-cyan-300/20 to-[#C800DE]/20",
     image: asset("/images/hisun-750.png"),
   },
   {
@@ -166,7 +166,7 @@ const fleet = [
     fit: "рост 145–185 см · вес до 90–100 кг · 1 человек / 1 взрослый + ребёнок",
     fitList: ["Рост: 145–185 см", "Вес: до 90–100 кг", "Уровень: новичок / подросток / спокойные маршруты", "Посадка: 1 человек / 1 взрослый + ребёнок по согласованию"],
     from: "от 6 000 ₽/час",
-    accent: "from-lime-300/35 via-fuchsia-500/20 to-cyan-300/20",
+    accent: "from-lime-300/35 via-[#C800DE]/20 to-cyan-300/20",
     image: asset("/images/avantis-200.png"),
   },
   {
@@ -179,7 +179,7 @@ const fleet = [
     fit: "рост 160–195 см · вес до 150 кг · новичок / зимние маршруты",
     fitList: ["Рост: 160–195 см", "Вес: до 150 кг", "Уровень: новичок / спокойные зимние маршруты", "Посадка: 1 человек"],
     from: "по запросу",
-    accent: "from-white/25 via-cyan-300/25 to-fuchsia-500/15",
+    accent: "from-white/25 via-cyan-300/25 to-[#C800DE]/15",
     image: asset("/images/irbis-180.png"),
   },
 ];
@@ -203,9 +203,8 @@ const packages = {
     items: [
       { name: "Apex RMG / Apex 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лучший вариант для первого опыта, обучения и лёгких маршрутов." },
       { name: "Wels Team 125", price: "6 000 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Подходит новичкам, подросткам и компактным райдерам." },
-      { name: "BSE Z5", price: "7 000 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро. Для новичка с базовой подготовкой и среднего уровня." },
       { name: "XGZ GTS PR300", price: "7 000 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро. Для уверенного новичка и среднего уровня." },
-      { name: "STN R6", price: "7 500 ₽/час", details: "300 см³, 25 л.с. Спокойный полноразмерный эндуро для обучения и ровных маршрутов." },
+      { name: "STN R6", price: "от 5 500 ₽/час", details: "300 см³, 25 л.с., колёса 21/18, высота по седлу 920–940 мм. Сбалансированный эндуро для обучения, маршрутов и самостоятельных заездов." },
       { name: "STN V6", price: "8 000 ₽/час", details: "300 см³, 25 л.с. Для новичка с небольшим опытом и среднего уровня." },
       { name: "STN G9 Pro", price: "9 000 ₽/час", details: "300 см³, 33 л.с. Мощный полноразмерный эндуро для среднего уровня и опытных райдеров." },
     ],
@@ -219,9 +218,8 @@ const packages = {
     items: [
       { name: "Apex RMG / Apex 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий мото-тур на питбайке." },
       { name: "Wels Team 125", price: "5 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк для лёгкого темпа." },
-      { name: "BSE Z5", price: "6 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
       { name: "XGZ GTS PR300", price: "6 500 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро." },
-      { name: "STN R6", price: "7 000 ₽/час", details: "300 см³, 25 л.с., спокойный полноразмерный эндуро." },
+      { name: "STN R6", price: "от 5 500 ₽/час", details: "300 см³, 25 л.с., спокойный полноразмерный эндуро для маршрута с гидом." },
       { name: "STN V6", price: "7 500 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
       { name: "STN G9 Pro", price: "8 500 ₽/час", details: "300 см³, 33 л.с., мощный полноразмерный эндуро для активного маршрута." },
     ],
@@ -256,21 +254,72 @@ const packages = {
     items: [
       { name: "Apex RMG / Apex 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Лёгкий питбайк для самостоятельного катания." },
       { name: "Wels Team 125", price: "4 500 ₽/час", details: "125 см³, 12 л.с., колёса 17/14. Компактный питбайк." },
-      { name: "BSE Z5", price: "5 500 ₽/час", details: "250 см³, 21 л.с., полноразмерный эндуро." },
       { name: "XGZ GTS PR300", price: "5 500 ₽/час", details: "271 см³, 25 л.с., полноразмерный эндуро." },
-      { name: "STN R6", price: "6 000 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
+      { name: "STN R6", price: "от 5 500 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро для фрирайда." },
       { name: "STN V6", price: "6 500 ₽/час", details: "300 см³, 25 л.с., полноразмерный эндуро." },
+    ],
+  },
+  crew: {
+    title: "Эндуро вписка",
+    short: "На опыте",
+    label: "с командой",
+    hook: "Для тех, кто уже уверенно едет.",
+    note: "Формат для опытных райдеров, которые хотят катнуть с нашей командой. Темп, маршрут и техника согласуются заранее.",
+    items: [
+      { name: "Эндуро вписка", price: "по согласованию", details: "Подбираем дату, маршрут, темп и технику под уровень райдера." },
+    ],
+  },
+  gift: {
+    title: "Подарочный сертификат",
+    short: "Подарок",
+    label: "в прокат",
+    hook: "Подари катку в Эндурокайф.",
+    note: "Сертификат можно подарить на занятие с тренером, мото-тур, квадро-тур или другой формат. Номинал и условия согласуем при записи.",
+    items: [
+      { name: "Подарочный сертификат", price: "по запросу", details: "Подходит для подарка другу, близкому человеку или коллеге. Поможем выбрать формат под опыт получателя." },
     ],
   },
 };
 
-const packageOrder = ["training", "guided", "quad", "free"];
+const packageOrder = ["training", "guided", "free", "quad", "crew", "gift"];
 
 const picker = [
-  { title: "Я новичок", text: "Хочу попробовать без риска", result: "Занятие с тренером", key: "training" },
-  { title: "Я уже ездил", text: "Хочу маршрут, грязь и темп", result: "Мото-тур с гидом", key: "guided" },
-  { title: "Едем компанией", text: "Друзья, пара, ребёнок, корпоратив", result: "Квадро-тур", key: "quad" },
-  { title: "Хочу сам", text: "Есть опыт и нужен свободный формат", result: "Свободное катание", key: "free" },
+  {
+    title: "Я новичок",
+    text: "Опыта на эндуро нет. Хочу научиться.",
+    result: "Занятие с тренером",
+    key: "training",
+  },
+  {
+    title: "Я уже ездил",
+    text: "Базовые навыки управления эндуро есть. Хочу на маршрут с поддержкой.",
+    result: "Мото-тур с гидом",
+    key: "guided",
+  },
+  {
+    title: "Я уверенно управляю эндуро мотоциклом",
+    text: "Хочу свободное катание, без вас.",
+    result: "Фрирайд",
+    key: "free",
+  },
+  {
+    title: "Не эндуро",
+    text: "Хочу бездорожье и грязь на 4х колесах.",
+    result: "Квадро-тур",
+    key: "quad",
+  },
+  {
+    title: "Я на опыте!",
+    text: "Хочу катнуть с вашей командой.",
+    result: "Эндуро вписка",
+    key: "crew",
+  },
+  {
+    title: "Хочу подарить",
+    text: "Хочу подарить посещение к вам в прокат.",
+    result: "Подарочный сертификат",
+    key: "gift",
+  },
 ];
 
 const included = [
@@ -326,26 +375,28 @@ const steps = [
 
 function NoiseLayer() {
   return (
-    <div className="pointer-events-none absolute inset-0 opacity-[0.14] mix-blend-screen [background-image:radial-gradient(circle_at_20%_20%,rgba(255,255,255,.2)_0,transparent_17%),radial-gradient(circle_at_80%_10%,rgba(255,0,128,.24)_0,transparent_18%),linear-gradient(115deg,transparent_0_46%,rgba(0,229,255,.24)_46%_47%,transparent_47%_100%)]" />
+    <div className="pointer-events-none absolute inset-0 opacity-[0.14] mix-blend-screen [background-image:radial-gradient(circle_at_20%_20%,rgba(255,255,255,.2)_0,transparent_17%),radial-gradient(circle_at_80%_10%,rgba(200,0,222,.24)_0,transparent_18%),linear-gradient(115deg,transparent_0_46%,rgba(0,229,255,.24)_46%_47%,transparent_47%_100%)]" />
   );
 }
 
 function HeroVideoBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-black">
-      <video className="absolute inset-0 h-full w-full object-cover opacity-75" autoPlay muted loop playsInline poster={asset("/hero-poster.jpg")}>
+      <video className="absolute inset-0 h-full w-full scale-[1.28] object-cover object-center opacity-100 brightness-[1.18] contrast-[1.12] saturate-[1.12]" autoPlay muted loop playsInline poster={asset("/hero-poster.jpg")}>
         <source src={asset("/hero-bg.mp4")} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/62" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(236,72,153,.34),transparent_30%),radial-gradient(circle_at_82%_22%,rgba(34,211,238,.28),transparent_28%),linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.36),rgba(0,0,0,.88))]" />
+      <div className="absolute inset-0 bg-black/28" />
+      <div className="absolute inset-x-0 top-0 z-[1] h-24 bg-gradient-to-b from-black via-black/92 to-transparent md:h-28" />
+      <div className="absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-black via-black/94 to-transparent md:h-32" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(200,0,222,.20),transparent_30%),radial-gradient(circle_at_82%_22%,rgba(34,211,238,.18),transparent_28%),linear-gradient(90deg,rgba(0,0,0,.58),rgba(0,0,0,.12),rgba(0,0,0,.50))]" />
       <motion.div
-        className="absolute left-[-20%] top-[24%] h-24 w-[145%] -rotate-12 bg-fuchsia-600/34 blur-xl"
-        animate={{ x: ["-10%", "8%", "-10%"], opacity: [0.18, 0.46, 0.18] }}
+        className="absolute left-[-20%] top-[24%] h-20 w-[145%] -rotate-12 bg-[#C800DE]/22 blur-sm"
+        animate={{ x: ["-10%", "8%", "-10%"], opacity: [0.10, 0.26, 0.10] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[-20%] top-[60%] h-20 w-[135%] rotate-12 bg-cyan-400/24 blur-xl"
-        animate={{ x: ["8%", "-8%", "8%"], opacity: [0.14, 0.34, 0.14] }}
+        className="absolute right-[-20%] top-[60%] h-16 w-[135%] rotate-12 bg-cyan-400/16 blur-sm"
+        animate={{ x: ["8%", "-8%", "8%"], opacity: [0.08, 0.20, 0.08] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <NoiseLayer />
@@ -368,7 +419,7 @@ function AnimatedBackground() {
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden bg-black">
-      <motion.div className="absolute -left-44 top-[-90px] h-[620px] w-[620px] rounded-full bg-fuchsia-600/32 blur-3xl" animate={{ x: [0, 130, 30, 0], y: [0, 60, 150, 0], scale: [1, 1.12, 0.9, 1] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
+      <motion.div className="absolute -left-44 top-[-90px] h-[620px] w-[620px] rounded-full bg-[#C800DE]/32 blur-3xl" animate={{ x: [0, 130, 30, 0], y: [0, 60, 150, 0], scale: [1, 1.12, 0.9, 1] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
       <motion.div className="absolute right-[-190px] top-20 h-[670px] w-[670px] rounded-full bg-cyan-400/22 blur-3xl" animate={{ x: [0, -120, -30, 0], y: [0, 150, 40, 0], scale: [1, 0.84, 1.1, 1] }} transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0,rgba(0,0,0,.42)_35%,rgba(0,0,0,.96)_100%)]" />
       <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)] [background-size:68px_68px]" />
@@ -403,7 +454,7 @@ function CTAButton({ children, variant = "primary", href = "#booking" }) {
   const base = "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-black uppercase tracking-wide transition-all duration-300";
   const styles =
     variant === "primary"
-      ? "bg-fuchsia-600 text-white shadow-[0_0_40px_rgba(217,70,239,.38)] hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_42px_rgba(34,211,238,.4)]"
+      ? "bg-[#C800DE] text-white shadow-[0_0_40px_rgba(200,0,222,.38)] hover:bg-cyan-300 hover:text-black hover:shadow-[0_0_42px_rgba(34,211,238,.4)]"
       : "border border-white/20 bg-white/5 text-white hover:border-cyan-300/60 hover:bg-cyan-300/10";
 
   return (
@@ -425,7 +476,7 @@ function ContactCards({ compact = false }) {
             href={contact.href}
             className={`group relative overflow-hidden rounded-[1.7rem] border p-5 text-left transition-all ${
               contact.primary
-                ? "border-fuchsia-400 bg-fuchsia-600 text-white shadow-[0_0_42px_rgba(217,70,239,.3)] hover:bg-cyan-300 hover:text-black"
+                ? "border-[#C800DE] bg-[#C800DE] text-white shadow-[0_0_42px_rgba(200,0,222,.3)] hover:bg-cyan-300 hover:text-black"
                 : "border-white/10 bg-white/[0.05] text-white hover:border-cyan-300/50 hover:bg-cyan-300/[0.08]"
             }`}
           >
@@ -459,7 +510,7 @@ function LocationMap() {
         <SectionTitle eyebrow="точка старта" title="Стартуем у Медного озера" />
         <div className="grid gap-6 lg:grid-cols-[.85fr_1.15fr] lg:items-stretch">
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-7">
-            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl" />
+            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#C800DE]/20 blur-3xl" />
             <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
             <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-300 text-black">
               <MapPin className="h-7 w-7" />
@@ -467,7 +518,7 @@ function LocationMap() {
             <h3 className="relative text-3xl font-black uppercase tracking-[-0.04em]">Где находимся</h3>
             <p className="relative mt-4 text-lg leading-8 text-zinc-300">{brand.address}</p>
             <div className="relative mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href={`https://yandex.ru/maps/?text=${encodeURIComponent(brand.address)}`} target="_blank" rel="noreferrer" className="rounded-full bg-fuchsia-600 px-5 py-3 text-center text-sm font-black uppercase text-white transition hover:bg-cyan-300 hover:text-black">
+              <a href={`https://yandex.ru/maps/?text=${encodeURIComponent(brand.address)}`} target="_blank" rel="noreferrer" className="rounded-full bg-[#C800DE] px-5 py-3 text-center text-sm font-black uppercase text-white transition hover:bg-cyan-300 hover:text-black">
                 Открыть Яндекс.Карты
               </a>
               <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(brand.address)}`} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-center text-sm font-black uppercase text-white transition hover:border-cyan-300/50 hover:bg-cyan-300/10">
@@ -564,7 +615,7 @@ function RealRideGallery() {
             >
               <img src={photo.src} alt={photo.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              <div className="absolute left-5 right-5 top-5 h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
+              <div className="absolute left-5 right-5 top-5 h-1 bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Эндурокайф</div>
                 <div className="mt-2 text-2xl font-black">{photo.title}</div>
@@ -687,7 +738,7 @@ function FleetCarousel({ items, selected, onSelect }) {
       }}
       className="relative mx-auto max-w-6xl touch-pan-y select-none"
     >
-      <div className="pointer-events-none absolute inset-y-8 left-0 z-0 hidden w-1/3 rounded-[2rem] bg-fuchsia-600/10 blur-2xl md:block" />
+      <div className="pointer-events-none absolute inset-y-8 left-0 z-0 hidden w-1/3 rounded-[2rem] bg-[#C800DE]/10 blur-2xl md:block" />
       <div className="pointer-events-none absolute inset-y-8 right-0 z-0 hidden w-1/3 rounded-[2rem] bg-cyan-300/10 blur-2xl md:block" />
 
       {sideCards.map(({ item, offset, label }) => (
@@ -774,7 +825,7 @@ function FleetCarousel({ items, selected, onSelect }) {
               onSelect(item);
             }}
             className={`h-2.5 rounded-full transition-all ${
-              item.title === selected.title ? "w-8 bg-fuchsia-500 shadow-[0_0_18px_rgba(217,70,239,.65)]" : "w-2.5 bg-white/20 hover:bg-cyan-300/60"
+              item.title === selected.title ? "w-8 bg-[#C800DE] shadow-[0_0_18px_rgba(200,0,222,.65)]" : "w-2.5 bg-white/20 hover:bg-cyan-300/60"
             }`}
             aria-label={item.title}
           />
@@ -814,7 +865,7 @@ function TechPreview({ selected, compact = false }) {
           transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
         />
         <div className="relative z-10 mt-3">
-          <div className="text-[10px] font-black uppercase tracking-[0.24em] text-fuchsia-200 md:text-xs">{selected.category}</div>
+          <div className="text-[10px] font-black uppercase tracking-[0.24em] text-[#C800DE] md:text-xs">{selected.category}</div>
           <div className={`${compact ? "text-2xl" : "text-4xl"} mt-2 font-black tracking-tight`}>{selected.title}</div>
           <div className="mt-2 max-w-xl text-sm text-zinc-300 md:text-base">{selected.subtitle}</div>
         </div>
@@ -826,7 +877,7 @@ function TechPreview({ selected, compact = false }) {
           <InfoLines items={specs} />
         </div>
         <div className="rounded-3xl border border-white/10 bg-black/35 p-4 md:p-5">
-          <Star className="mb-3 h-5 w-5 text-fuchsia-400" />
+          <Star className="mb-3 h-5 w-5 text-[#C800DE]" />
           <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-xs">кому подходит</div>
           <InfoLines items={fit} />
         </div>
@@ -844,7 +895,7 @@ function MobileStickyCta() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-black/82 p-3 backdrop-blur-xl md:hidden">
       <div className="grid grid-cols-2 gap-2">
-        <a href={brand.telegram} className="rounded-full bg-fuchsia-600 px-4 py-3 text-center text-sm font-black uppercase text-white shadow-[0_0_30px_rgba(217,70,239,.35)]">Telegram</a>
+        <a href={brand.telegram} className="rounded-full bg-[#C800DE] px-4 py-3 text-center text-sm font-black uppercase text-white shadow-[0_0_30px_rgba(200,0,222,.35)]">Telegram</a>
         <a href={brand.phone} className="rounded-full border border-cyan-300/40 bg-cyan-300/10 px-4 py-3 text-center text-sm font-black uppercase text-cyan-100">Позвонить</a>
       </div>
     </div>
@@ -874,62 +925,64 @@ export default function EndurokaifLanding() {
   };
 
   return (
-    <main className="min-h-screen bg-black pb-20 text-white antialiased selection:bg-fuchsia-500 selection:text-white md:pb-0">
+    <main className="min-h-screen bg-black pb-20 text-white antialiased selection:bg-[#C800DE] selection:text-white md:pb-0">
       <GlobalStyles />
       <section className="relative min-h-screen overflow-hidden">
         <HeroVideoBackground />
 
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
           <a href="#top" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-black/55 text-fuchsia-400 shadow-[0_0_30px_rgba(236,72,153,.35)] backdrop-blur-xl">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-black/55 text-[#C800DE] shadow-[0_0_30px_rgba(200,0,222,.35)] backdrop-blur-xl">
               <Bike className="h-6 w-6" />
             </div>
             <div>
               <div className="text-sm font-black uppercase tracking-[0.24em] text-white">{brand.name}</div>
-              <div className="text-xs text-cyan-200">прокат · сервис · продажа</div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-cyan-200 md:text-xs">прокат•обучение•маршруты•сервис•магазин</div>
             </div>
           </a>
 
           <nav className="hidden items-center gap-7 text-sm font-bold uppercase tracking-wide text-zinc-300 md:flex">
-            <a className="hover:text-fuchsia-300" href="#picker">Что выбрать</a>
-            <a className="hover:text-fuchsia-300" href="#fleet">Техника</a>
-            <a className="hover:text-fuchsia-300" href="#prices">Цены</a>
-            <a className="hover:text-fuchsia-300" href="#photos">Фото</a>
-            <a className="hover:text-fuchsia-300" href="#booking">Запись</a>
-            <a className="hover:text-fuchsia-300" href="#location">Карта</a>
+            <a className="hover:text-[#C800DE]" href="#picker">Что выбрать</a>
+            <a className="hover:text-[#C800DE]" href="#fleet">Техника</a>
+            <a className="hover:text-[#C800DE]" href="#prices">Цены</a>
+            <a className="hover:text-[#C800DE]" href="#photos">Фото</a>
+            <a className="hover:text-[#C800DE]" href="#booking">Запись</a>
+            <a className="hover:text-[#C800DE]" href="#location">Карта</a>
           </nav>
         </header>
 
         <div id="top" className="relative z-10 mx-auto flex min-h-[calc(100svh-86px)] max-w-7xl items-center px-5 pb-20 pt-4 md:min-h-[calc(100vh-96px)] md:px-8 md:pb-28 md:pt-16">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-5xl">
-            <div className="mb-6 hidden items-center gap-2 rounded-full border border-fuchsia-400/35 bg-fuchsia-500/15 px-4 py-2 text-sm font-black uppercase tracking-wide text-fuchsia-100 shadow-[0_0_34px_rgba(236,72,153,.18)] md:inline-flex">
+            <div className="mb-6 hidden items-center gap-2 rounded-full border border-[#C800DE]/35 bg-[#C800DE]/15 px-4 py-2 text-sm font-black uppercase tracking-wide text-white shadow-[0_0_34px_rgba(200,0,222,.18)] md:inline-flex">
               <Zap className="h-4 w-4" />
-              {brand.city} · {brand.shortPlace} · {brand.since}
+              {brand.city}•{brand.shortPlace}•{brand.since}
             </div>
 
             <h1 className="text-5xl font-black uppercase leading-[0.86] tracking-[-0.06em] text-white sm:text-6xl md:text-8xl lg:text-9xl">
-              Грязь. Газ. <span className="text-fuchsia-500 drop-shadow-[0_0_18px_rgba(236,72,153,.55)]">Кайф.</span>
+              Грязь. Газ. <span className="text-[#C800DE] drop-shadow-[0_0_18px_rgba(200,0,222,.55)]">Кайф.</span>
             </h1>
 
-            <p className="mt-5 max-w-[18rem] text-xs font-medium leading-5 tracking-normal text-zinc-300 sm:max-w-md md:mt-7 md:max-w-2xl md:text-xl md:leading-8">
-              {brand.name} — эндуро, питбайки и квадроциклы в СПб.
+            <p className="mt-5 max-w-[18rem] text-xs font-medium leading-5 tracking-normal text-zinc-300 sm:max-w-md md:mt-7 md:max-w-3xl md:text-xl md:leading-8">
+              Эндурокайф — эндуро мотоциклы, питбайки, квадроциклы, сноубайки, снегоходы в аренду!
             </p>
 
             <div className="mt-7 hidden flex-col gap-3 sm:flex-row md:flex">
-              <CTAButton href="#booking">Записаться в Telegram</CTAButton>
+              <CTAButton href="#booking">Записаться</CTAButton>
               <CTAButton href="#picker" variant="secondary">Подобрать формат</CTAButton>
             </div>
 
-            <div className="mt-7 grid max-w-2xl grid-cols-3 gap-2 md:mt-10 md:gap-3">
+            <div className="mt-7 grid max-w-6xl grid-cols-2 gap-2 md:mt-10 md:grid-cols-3 md:gap-3 xl:grid-cols-5">
               {[
-                ["2019", "работаем на рынке"],
-                ["4", "формата катания"],
-                ["Тренер", "новичкам рядом"],
-              ].map(([value, label]) => (
-                <div key={label} className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/45 p-2.5 backdrop-blur-xl md:rounded-3xl md:p-4">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
-                  <div className="text-lg font-black text-white md:text-3xl">{value}</div>
-                  <div className="mt-1 text-[10px] leading-4 text-zinc-400 md:text-sm md:leading-5">{label}</div>
+                { value: "С 2019", label: "работаем на рынке СПб" },
+                { value: "Полный комплект", label: "экипировки", compact: true },
+                { value: "-10% скидка", label: "на день рождения", compact: true },
+                { value: "5", label: "форматов катания" },
+                { value: "Подарочный", label: "Сертификат", compact: true },
+              ].map((item) => (
+                <div key={`${item.value}-${item.label}`} className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/45 p-2.5 backdrop-blur-xl md:rounded-3xl md:p-4">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200" />
+                  <div className={item.compact ? "text-base font-black leading-tight text-white md:text-2xl" : "text-lg font-black text-white md:text-3xl"}>{item.value}</div>
+                  <div className="mt-1 text-[10px] leading-4 text-zinc-300 md:text-sm md:leading-5">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -942,7 +995,7 @@ export default function EndurokaifLanding() {
         <AnimatedBackground />
         <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="быстрый выбор" title="Не знаешь, что выбрать?" />
-          <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3">
             {picker.map((item, index) => (
               <motion.button
                 key={item.title}
@@ -951,10 +1004,10 @@ export default function EndurokaifLanding() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.5, delay: index * 0.06 }}
-                className="group relative flex min-h-[220px] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 text-center transition hover:border-cyan-300/50 hover:bg-cyan-300/[0.08] md:min-h-[310px] md:rounded-[2rem] md:p-6"
+                className="group relative flex min-h-[220px] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 text-center transition hover:border-cyan-300/50 hover:bg-cyan-300/[0.08] md:min-h-[280px] md:rounded-[2rem] md:p-6"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
-                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-fuchsia-600 text-lg font-black text-white shadow-[0_0_30px_rgba(217,70,239,.28)] md:mb-7 md:h-12 md:w-12 md:rounded-2xl md:text-xl">{index + 1}</div>
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200" />
+                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#C800DE] text-lg font-black text-white shadow-[0_0_30px_rgba(200,0,222,.28)] md:mb-7 md:h-12 md:w-12 md:rounded-2xl md:text-xl">{index + 1}</div>
                 <h3 className="text-lg font-black md:text-2xl">{item.title}</h3>
                 <p className="mt-2 text-xs leading-5 text-zinc-400 md:text-sm md:leading-6">{item.text}</p>
                 <div className="mx-auto mt-auto inline-flex items-center gap-2 rounded-full bg-cyan-300/10 px-3 py-2 text-xs font-black text-cyan-100 md:px-4 md:text-sm">
@@ -968,9 +1021,9 @@ export default function EndurokaifLanding() {
       </section>
 
       <section id="fleet" className="relative overflow-hidden bg-[#050505] px-5 py-16 md:px-8 md:py-28">
-        <div className="absolute left-0 top-0 h-28 w-full bg-fuchsia-600/15 [clip-path:polygon(0_0,100%_0,100%_20%,0_80%)]" />
+        <div className="absolute left-0 top-0 h-28 w-full bg-[#C800DE]/15 [clip-path:polygon(0_0,100%_0,100%_20%,0_80%)]" />
         <div className="relative mx-auto w-full max-w-7xl">
-          <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Эндуро, питбайки, квадроциклы и сноубайк — выбирай формат под опыт, сезон и компанию." />
+          <SectionTitle eyebrow="техника" title="Железо под твой сценарий" text="Эндуро мотоциклы, питбайки, квадроциклы, сноубайки и снегоходы — выбирай формат по своим параметрам, опыту и сезону." />
 
           <div className="mb-6 flex flex-wrap justify-center gap-2 pb-2">
             {fleetFilters.map((filter) => (
@@ -980,7 +1033,7 @@ export default function EndurokaifLanding() {
                 className={`shrink-0 rounded-full border px-4 py-2 text-xs font-black uppercase tracking-wide transition md:text-sm ${
                   activeFleetFilter === filter.key
                     ? "border-cyan-300 bg-cyan-300 text-black shadow-[0_0_28px_rgba(34,211,238,.25)]"
-                    : "border-white/10 bg-white/[0.04] text-white hover:border-fuchsia-400/50 hover:bg-fuchsia-500/[0.08]"
+                    : "border-white/10 bg-white/[0.04] text-white hover:border-[#C800DE]/50 hover:bg-[#C800DE]/[0.08]"
                 }`}
               >
                 {filter.label}
@@ -1028,7 +1081,7 @@ export default function EndurokaifLanding() {
                               <div className="flex items-start justify-between gap-3">
                                 <div>
                                   <div className="text-base font-black">{service.name}</div>
-                                  <div className="mt-2 inline-flex rounded-full bg-fuchsia-600 px-3 py-1.5 text-xs font-black text-white">{service.price}</div>
+                                  <div className="mt-2 inline-flex rounded-full bg-[#C800DE] px-3 py-1.5 text-xs font-black text-white">{service.price}</div>
                                 </div>
                                 <button onClick={() => setExpanded(isOpen ? null : `${key}-${index}`)} className="shrink-0 rounded-full border border-white/10 px-3 py-1.5 text-xs font-black text-cyan-100">
                                   {isOpen ? "−" : "+"}
@@ -1051,7 +1104,7 @@ export default function EndurokaifLanding() {
               {packageOrder.map((key) => {
                 const item = packages[key];
                 return (
-                  <button key={key} onClick={() => { setActivePackage(key); setExpanded(null); }} className={`rounded-3xl border p-5 text-left transition-all ${activePackage === key ? "border-cyan-300 bg-cyan-300 text-black shadow-[0_0_35px_rgba(34,211,238,.25)]" : "border-white/10 bg-white/[0.04] text-white hover:border-fuchsia-400/50 hover:bg-fuchsia-500/[0.08]"}`}>
+                  <button key={key} onClick={() => { setActivePackage(key); setExpanded(null); }} className={`rounded-3xl border p-5 text-left transition-all ${activePackage === key ? "border-cyan-300 bg-cyan-300 text-black shadow-[0_0_35px_rgba(34,211,238,.25)]" : "border-white/10 bg-white/[0.04] text-white hover:border-[#C800DE]/50 hover:bg-[#C800DE]/[0.08]"}`}>
                     <div className="text-xs font-black uppercase tracking-[0.22em] opacity-70">{item.label}</div>
                     <div className="mt-2 text-xl font-black">{item.title}</div>
                     <div className="mt-3 text-sm opacity-75">{item.hook}</div>
@@ -1063,7 +1116,7 @@ export default function EndurokaifLanding() {
             <motion.div key={activePackage} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 md:p-7">
               <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
                 <div>
-                  <div className="text-sm font-black uppercase tracking-[0.28em] text-fuchsia-300">{currentPackage.short} · {currentPackage.label}</div>
+                  <div className="text-sm font-black uppercase tracking-[0.28em] text-[#C800DE]">{currentPackage.short} · {currentPackage.label}</div>
                   <h3 className="mt-2 text-3xl font-black md:text-5xl">{currentPackage.title}</h3>
                   <p className="mt-3 max-w-3xl text-zinc-300">{currentPackage.note}</p>
                 </div>
@@ -1081,7 +1134,7 @@ export default function EndurokaifLanding() {
                       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
                         <div>
                           <div className="text-xl font-black">{item.name}</div>
-                          <div className="mt-3 inline-flex rounded-full bg-fuchsia-600 px-4 py-2 text-sm font-black text-white">{item.price}</div>
+                          <div className="mt-3 inline-flex rounded-full bg-[#C800DE] px-4 py-2 text-sm font-black text-white">{item.price}</div>
                         </div>
                         <button onClick={() => setExpanded(isOpen ? null : `${activePackage}-${index}`)} className="rounded-full border border-white/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:border-cyan-300/50 hover:bg-cyan-300/10">
                           {isOpen ? "Скрыть" : "Подробнее"}
@@ -1109,7 +1162,7 @@ export default function EndurokaifLanding() {
               {included.map((item) => (
                 <div
                   key={item}
-                  className="flex min-h-[72px] items-center gap-3 rounded-[1.6rem] border border-white/10 bg-black/50 p-4 transition hover:border-fuchsia-400/45 md:min-h-[86px] md:rounded-3xl md:p-5 lg:min-h-0"
+                  className="flex min-h-[72px] items-center gap-3 rounded-[1.6rem] border border-white/10 bg-black/50 p-4 transition hover:border-[#C800DE]/45 md:min-h-[86px] md:rounded-3xl md:p-5 lg:min-h-0"
                 >
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-sm font-black text-black">
                     ✓
@@ -1160,7 +1213,7 @@ export default function EndurokaifLanding() {
 
       <section id="format" className="relative overflow-hidden bg-black px-5 py-20 md:px-8 md:py-28">
         <AnimatedBackground />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/60 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C800DE]/60 to-transparent" />
         <div className="relative mx-auto w-full max-w-7xl">
           <SectionTitle eyebrow="почему мы" title="Мотокайф с нормальной организацией" />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -1168,7 +1221,7 @@ export default function EndurokaifLanding() {
               const Icon = item.icon;
               return (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.5, delay: index * 0.06 }} className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition hover:border-cyan-300/50">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200" />
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300 text-black">
                     <Icon className="h-6 w-6" />
                   </div>
@@ -1189,7 +1242,7 @@ export default function EndurokaifLanding() {
           <div className="relative">
             <div className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-1 rounded-full bg-white/10 md:block" />
             <motion.div
-              className="absolute left-[12.5%] top-8 hidden h-1 rounded-full bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200 shadow-[0_0_30px_rgba(34,211,238,.35)] md:block"
+              className="absolute left-[12.5%] top-8 hidden h-1 rounded-full bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200 shadow-[0_0_30px_rgba(34,211,238,.35)] md:block"
               initial={{ width: "0%" }}
               whileInView={{ width: "75%" }}
               viewport={{ once: true, amount: 0.45 }}
@@ -1208,7 +1261,7 @@ export default function EndurokaifLanding() {
                 >
                   <motion.div
                     className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white text-2xl font-black text-black shadow-[0_0_34px_rgba(255,255,255,.18)]"
-                    animate={{ scale: [1, 1.08, 1], boxShadow: ["0 0 22px rgba(236,72,153,.22)", "0 0 34px rgba(34,211,238,.34)", "0 0 22px rgba(236,72,153,.22)"] }}
+                    animate={{ scale: [1, 1.08, 1], boxShadow: ["0 0 22px rgba(200,0,222,.22)", "0 0 34px rgba(34,211,238,.34)", "0 0 22px rgba(200,0,222,.22)"] }}
                     transition={{ duration: 2.4, repeat: Infinity, delay: index * 0.25, ease: "easeInOut" }}
                   >
                     {index + 1}
@@ -1227,17 +1280,17 @@ export default function EndurokaifLanding() {
       <RealRideGallery />
 
       <section id="booking" className="relative overflow-hidden bg-black px-5 py-20 md:px-8 md:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(236,72,153,.25),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(34,211,238,.18),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(200,0,222,.25),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(34,211,238,.18),transparent_32%)]" />
         <NoiseLayer />
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-7 backdrop-blur-xl md:p-12">
-          <div className="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-fuchsia-500 via-cyan-300 to-yellow-200" />
+          <div className="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-[#C800DE] via-cyan-300 to-yellow-200" />
           <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
             <div>
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-fuchsia-600 text-white shadow-[0_0_45px_rgba(236,72,153,.35)]">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-[#C800DE] text-white shadow-[0_0_45px_rgba(200,0,222,.35)]">
                 <MessageCircle className="h-8 w-8" />
               </div>
-              <h2 className="text-4xl font-black uppercase tracking-[-0.05em] md:text-6xl">Готов ехать? Напиши нам.</h2>
-              <p className="mt-5 text-lg leading-8 text-zinc-300">Скажи дату, количество человек, опыт и желаемый формат. Мы подберём технику, маршрут и свободное время.</p>
+              <h2 className="text-4xl font-black uppercase tracking-[-0.05em] md:text-6xl">Готов записаться к нам на катку?</h2>
+              <p className="mt-5 text-lg leading-8 text-zinc-300">Напиши или позвони нам. Сообщи дату, количество участников, возраст, рост и вес каждого, и, конечно же, желаемую длительность катания. Мы подберём технику, пакет услуг и сообщим доступные даты и время.</p>
               <div className="mt-7 space-y-3 text-sm text-zinc-400">
                 <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" /> <span>{brand.address}</span></div>
                 <div className="flex items-center gap-3"><Snowflake className="h-4 w-4 text-cyan-300" /> <span>Летние и зимние форматы</span></div>
@@ -1255,12 +1308,12 @@ export default function EndurokaifLanding() {
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-zinc-500 md:flex-row md:items-center">
           <div>© 2026 {brand.name}. Прокат внедорожной техники в Санкт-Петербурге.</div>
           <div className="flex gap-5">
-            <a className="hover:text-fuchsia-300" href="#picker">Что выбрать</a>
-            <a className="hover:text-fuchsia-300" href="#fleet">Техника</a>
-            <a className="hover:text-fuchsia-300" href="#prices">Цены</a>
-            <a className="hover:text-fuchsia-300" href="#photos">Фото</a>
-            <a className="hover:text-fuchsia-300" href="#location">Карта</a>
-            <a className="hover:text-fuchsia-300" href="#booking">Запись</a>
+            <a className="hover:text-[#C800DE]" href="#picker">Что выбрать</a>
+            <a className="hover:text-[#C800DE]" href="#fleet">Техника</a>
+            <a className="hover:text-[#C800DE]" href="#prices">Цены</a>
+            <a className="hover:text-[#C800DE]" href="#photos">Фото</a>
+            <a className="hover:text-[#C800DE]" href="#location">Карта</a>
+            <a className="hover:text-[#C800DE]" href="#booking">Запись</a>
           </div>
         </div>
       </footer>
